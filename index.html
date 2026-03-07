@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paul Buliga — Marketing Leader</title>
+  <meta name="description" content="Marketing leadership portfolio — GTM, demand generation, and revenue growth across B2B SaaS, fintech, and enterprise technology.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    /* ─── Design Tokens ────────────────────────────────── */
+    :root {
+      --accent:        #3d9e6e;
+      --accent-mid:    #5bbf8a;
+      --accent-light:  #e4f4ec;
+      --accent-glow:   rgba(93,191,138,0.18);
+      --text:          #1a2e22;
+      --text-muted:    #4a6b57;
+      --text-faint:    #7a9e87;
+      --bg:            #f2f8f5;
+      --card:          #ffffff;
+      --card-border:   rgba(26,46,34,0.08);
+      --card-shadow:   0 2px 24px rgba(26,46,34,0.07);
+      --card-shadow-h: 0 8px 40px rgba(26,46,34,0.13);
+      --divider:       rgba(26,46,34,0.09);
+      --radius:        16px;
+      --radius-sm:     10px;
+      --max-w:         1160px;
+      --font-sans:     'Syne', system-ui, sans-serif;
+      --font-body:     'Inter', system-ui, sans-serif;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+      background-image:
+        radial-gradient(ellipse 90% 55% at 10% 20%, rgba(134,210,163,0.30) 0%, transparent 68%),
+        radial-gradient(ellipse 60% 50% at 88% 80%, rgba(76,175,130,0.20) 0%, transparent 62%),
+        radial-gradient(ellipse 40% 35% at 55% 50%, rgba(93,191,138,0.10) 0%, transparent 55%),
+        linear-gradient(160deg, #f0f7f4 0%, #e8f5ee 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+
+    /* ─── Layout Helpers ──────────────────────────────── */
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+    section { padding: 96px 0; }
+
+    /* ─── Navigation ──────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px) saturate(1.4);
+      -webkit-backdrop-filter: blur(14px) saturate(1.4);
+      background: rgba(242, 248, 245, 0.82);
+      border-bottom: 1px solid var(--divider);
+    }
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .nav-logo {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.3px;
+      white-space: nowrap;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); background: rgba(26,46,34,0.05); }
+    .btn-nav {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff !important;
+      background: var(--accent);
+      padding: 8px 18px !important;
+      border-radius: 10px !important;
+      transition: background 0.2s, transform 0.1s !important;
+    }
+    .btn-nav:hover { background: #2e8a5a !important; transform: translateY(-1px); }
+
+    /* ─── Hero ────────────────────────────────────────── */
+    #hero {
+      padding: 120px 0 104px;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-light);
+      border: 1px solid rgba(61,158,110,0.2);
+      padding: 5px 12px;
+      border-radius: 99px;
+      margin-bottom: 28px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+    }
+    h1.hero-title {
+      font-family: var(--font-sans);
+      font-size: clamp(38px, 5.5vw, 64px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+      color: var(--text);
+      max-width: 820px;
+      margin-bottom: 20px;
+    }
+    h1.hero-title em {
+      font-style: normal;
+      color: var(--accent);
+    }
+    .hero-sub {
+      font-family: var(--font-body);
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin-bottom: 12px;
+      font-weight: 400;
+    }
+    .hero-desc {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 100%;
+      margin-bottom: 40px;
+    }
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      background: var(--accent);
+      padding: 13px 26px;
+      border-radius: 12px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 14px rgba(61,158,110,0.3);
+    }
+    .btn-primary:hover { background: #2e8a5a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(61,158,110,0.35); }
+    .btn-outline {
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      background: transparent;
+      padding: 12px 24px;
+      border-radius: 12px;
+      border: 1.5px solid var(--card-border);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    }
+    .btn-outline:hover { border-color: var(--accent); background: var(--accent-light); transform: translateY(-2px); }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid var(--divider);
+    }
+    .hero-stats > div {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .hero-stat-num {
+      font-family: var(--font-sans);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.5px;
+      display: block;
+      line-height: 1;
+    }
+    .hero-stat-label { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+    /* ─── Section Labels ──────────────────────────────── */
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-bottom: 48px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--divider); }
+    .section-title {
+      font-family: var(--font-sans);
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    /* ─── Logo Strip / Marquee ────────────────────────── */
+    #logos { padding: 56px 0; }
+    .logos-label {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .logos-viewport {
+      overflow: hidden;
+      -webkit-mask: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+      mask: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+    }
+    .logos-track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      animation: marquee 30s linear infinite;
+    }
+    .logos-track:hover { animation-play-state: paused; }
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .logo-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* fixed-size slot so every logo occupies identical space */
+      width: 160px;
+      height: 64px;
+      padding: 0 20px;
+      flex-shrink: 0;
+      border-radius: 14px;
+      transition: background 0.25s;
+      cursor: default;
+    }
+    .logo-item:hover { background: rgba(255,255,255,0.8); }
+    .logo-item img {
+      /* fill the slot height, never overflow width */
+      max-height: 32px;
+      max-width: 120px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .logo-fallback {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+      display: none;
+    }
+    .logo-item.has-error img { display: none; }
+    .logo-item.has-error .logo-fallback { display: block; }
+
+    /* ─── Case Studies Section ────────────────────────── */
+    #case-studies { padding: 80px 0 120px; }
+    .cs-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    /* ─── Case Study Card ─────────────────────────────── */
+    .cs-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+      transition: box-shadow 0.25s, transform 0.2s;
+    }
+    .cs-card:hover {
+      box-shadow: var(--card-shadow-h);
+      transform: translateY(-2px);
+    }
+    .cs-header {
+      padding: 32px 36px 28px;
+      border-bottom: 1px solid var(--divider);
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .cs-logo-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: var(--accent-light);
+      border: 1px solid rgba(61,158,110,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .cs-logo-wrap img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+    }
+    .cs-logo-initials {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 16px;
+      color: var(--accent);
+    }
+    .cs-header-meta { flex: 1; }
+    .cs-company {
+      font-family: var(--font-sans);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.3px;
+      margin-bottom: 4px;
+    }
+    .cs-role-line {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+    .cs-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-light);
+      border: 1px solid rgba(61,158,110,0.2);
+      padding: 4px 10px;
+      border-radius: 99px;
+      margin-top: 8px;
+    }
+    .cs-body { padding: 32px 36px; }
+    .cs-context {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      line-height: 1.65;
+    }
+
+    /* outcome highlight */
+    .cs-outcome {
+      background: linear-gradient(135deg, var(--accent-light) 0%, rgba(228,244,236,0.4) 100%);
+      border: 1px solid rgba(61,158,110,0.18);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .cs-outcome-icon {
+      width: 20px;
+      height: 20px;
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .cs-outcome-text {
+      font-size: 14px;
+      color: var(--text);
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    /* ─── Accordions ──────────────────────────────────── */
+    .accordions { display: flex; flex-direction: column; gap: 8px; margin-bottom: 36px; }
+    details.accordion {
+      border: 1px solid var(--divider);
+      border-radius: var(--radius-sm);
+      background: #fafcfb;
+      overflow: hidden;
+    }
+    details.accordion[open] { background: #fff; border-color: rgba(61,158,110,0.2); }
+    details.accordion > summary {
+      padding: 16px 20px;
+      cursor: pointer;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      list-style: none;
+      user-select: none;
+      transition: background 0.15s;
+    }
+    details.accordion > summary::-webkit-details-marker { display: none; }
+    details.accordion > summary::after {
+      content: '';
+      width: 16px; height: 16px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%234a6b57' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center/contain no-repeat;
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    details.accordion[open] > summary::after { transform: rotate(180deg); }
+    details.accordion > summary:hover { background: rgba(61,158,110,0.04); }
+    .accordion-body {
+      padding: 4px 20px 20px;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .accordion-body ul {
+      padding-left: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .accordion-body ul li { padding-left: 4px; }
+    .accordion-body ul li::marker { color: var(--accent); }
+    .accordion-body p { margin-bottom: 12px; }
+    .accordion-body p:last-child { margin-bottom: 0; }
+    .metric-highlight {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ─── Video Bento Grid ────────────────────────────── */
+    .bento-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-bottom: 16px;
+    }
+    .bento-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 160px 140px;
+      gap: 10px;
+    }
+    .bento-cell {
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .bento-video-main {
+      grid-column: 1;
+      grid-row: 1 / 3;
+      background: linear-gradient(145deg, #1a3a27 0%, #0f2318 100%);
+    }
+    .bento-scroll-track {
+      display: flex;
+      flex-direction: column;
+      animation: bento-scroll 18s linear infinite;
+    }
+    .bento-scroll-track img {
+      width: 100%;
+      display: block;
+    }
+    @keyframes bento-scroll {
+      0%   { transform: translateY(0); }
+      100% { transform: translateY(-50%); }
+    }
+    .bento-hscroll-track {
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+      width: max-content;
+      animation: bento-hscroll 22s linear infinite;
+    }
+    .bento-hscroll-track img {
+      height: 100%;
+      width: auto;
+      display: block;
+      flex-shrink: 0;
+    }
+    @keyframes bento-hscroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .bento-stat {
+      grid-column: 2;
+      grid-row: 1;
+      background: var(--accent-light);
+      border: 1px solid rgba(61,158,110,0.2);
+      flex-direction: column;
+      gap: 4px;
+      padding: 20px;
+      text-align: center;
+    }
+    .bento-video-sm-a {
+      grid-column: 3;
+      grid-row: 1;
+      background: linear-gradient(145deg, #243c2c 0%, #162a1d 100%);
+    }
+    .bento-video-sm-b {
+      grid-column: 2;
+      grid-row: 2;
+      background: linear-gradient(145deg, #1e3528 0%, #132019 100%);
+    }
+    .bento-work-sample {
+      grid-column: 3;
+      grid-row: 2;
+      background: #f0f4f2;
+      border: 1px solid var(--divider);
+      flex-direction: column;
+      gap: 6px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    /* video placeholder content */
+    .play-icon {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      border: 1.5px solid rgba(255,255,255,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    .play-icon svg { color: rgba(255,255,255,0.8); }
+    .video-placeholder-text {
+      font-size: 11px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+    .bento-stat-num {
+      font-family: var(--font-sans);
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.5px;
+      line-height: 1;
+    }
+    .bento-stat-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 500;
+      max-width: 100px;
+      text-align: center;
+      line-height: 1.4;
+    }
+    .work-sample-icon { color: var(--text-faint); }
+    .work-sample-text {
+      font-size: 11px;
+      color: var(--text-faint);
+      font-weight: 500;
+      text-align: center;
+    }
+
+    /* ─── Skills section ──────────────────────────────── */
+    #skills { padding: 80px 0; }
+    .skills-intro {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin-bottom: 48px;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .skill-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: var(--card-shadow);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .skill-card:hover { box-shadow: var(--card-shadow-h); transform: translateY(-2px); }
+    .skill-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      color: var(--accent);
+      font-size: 18px;
+    }
+    .skill-name {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .skill-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ─── Footer ──────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--divider);
+      padding: 64px 0 48px;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .footer-left {}
+    .footer-name {
+      font-family: var(--font-sans);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .footer-tagline {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 340px;
+      line-height: 1.6;
+    }
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .footer-link {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .footer-link:hover { color: var(--accent); }
+    .footer-right {}
+    .footer-nav { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-nav a {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-nav a:hover { color: var(--accent); }
+    .footer-bottom {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--divider);
+      font-size: 12px;
+      color: var(--text-faint);
+    }
+
+    /* ─── Scroll Animation ────────────────────────────── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── Responsive ──────────────────────────────────── */
+    @media (max-width: 768px) {
+      section { padding: 64px 0; }
+      .nav-links li:not(:last-child) { display: none; }
+      h1.hero-title { font-size: 36px; letter-spacing: -0.8px; }
+      .hero-stats { gap: 28px; }
+      .cs-header { flex-direction: column; gap: 12px; }
+      .cs-header, .cs-body { padding: 24px; }
+      .bento-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 160px 120px 120px;
+      }
+      .bento-video-main {
+        grid-column: 1 / 3;
+        grid-row: 1;
+      }
+      .bento-stat { grid-column: 1; grid-row: 2; }
+      .bento-video-sm-a { grid-column: 2; grid-row: 2; }
+      .bento-video-sm-b { grid-column: 1; grid-row: 3; }
+      .bento-work-sample { grid-column: 2; grid-row: 3; }
+      .footer-inner { flex-direction: column; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .cs-header, .cs-body { padding: 20px; }
+      .hero-ctas { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── Navigation ──────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Paul Buliga</a>
+    <ul class="nav-links">
+      <li><a href="#case-studies">Experience overview</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://www.linkedin.com/in/paulbuliga/" target="_blank" class="btn-nav">LinkedIn ↗</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ─── Hero ────────────────────────────────────────── -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-eyebrow">Marketing Leadership Portfolio</div>
+    <h1 class="hero-title">Building revenue engines that <em>scale</em>.</h1>
+    <p class="hero-sub">B2B SaaS &middot; Fintech &middot; Enterprise Technology</p>
+    <p class="hero-desc">A marketing leader who builds full-funnel go-to-market strategies, demand generation engines, and growth programmes across high-growth companies. I help B2B Technology, SaaS and Fintech companies grow by uniting brand, product marketing and demand generation into one engine that creates pipeline, accelerates deals, and increases customer adoption.</p>
+    <div class="hero-ctas">
+      <a href="#case-studies" class="btn-primary">See my work ↓</a>
+      <a href="https://www.linkedin.com/in/paulbuliga/" target="_blank" class="btn-outline">LinkedIn ↗</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <span class="hero-stat-num">$100M+</span>
+        <span class="hero-stat-label">Pipeline generated across SaaS, fintech, and enterprise technology platforms through full-funnel demand generation and ABM programmes.</span>
+      </div>
+      <div>
+        <span class="hero-stat-num">Conversion</span>
+        <span class="hero-stat-label">Improved lead-to-opportunity, demo-to-opportunity, and opportunity-to-closed-won performance through ICP refinement, funnel optimisation, and sales alignment.</span>
+      </div>
+      <div>
+        <span class="hero-stat-num">Rebrands</span>
+        <span class="hero-stat-label">Delivered multiple successful brand transformations, including the TransferWise → Wise transition and enterprise SaaS repositioning initiatives.</span>
+      </div>
+      <div>
+        <span class="hero-stat-num">GTM</span>
+        <span class="hero-stat-label">Built scalable go-to-market engines spanning positioning, demand generation, content, and marketing operations across Europe, North America, and APAC.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Logo Marquee ──────────────────────────────────── -->
+<section id="logos">
+  <div class="logos-label">Companies I&rsquo;ve worked at or with</div>
+  <div class="logos-viewport">
+    <div class="logos-track">
+
+      <!-- Set A -->
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Accenture.svg/1200px-Accenture.svg.png" alt="Accenture" onerror="this.closest('.logo-item').classList.add('has-error')">
+        <span class="logo-fallback">Accenture</span>
+      </div>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Oracle_logo.svg/1280px-Oracle_logo.svg.png" alt="Oracle" onerror="this.closest('.logo-item').classList.add('has-error')">
+        <span class="logo-fallback">Oracle</span>
+      </div>
+      <div class="logo-item">
+        <img src="https://wp.logos-download.com/wp-content/uploads/2022/11/Spendesk_Logo-700x107.png" alt="Spendesk" onerror="this.closest('.logo-item').classList.add('has-error')">
+        <span class="logo-fallback">Spendesk</span>
+      </div>
+      <div class="logo-item">
+        <img src="https://cdn.worldvectorlogo.com/logos/wise-2.svg" alt="Wise" onerror="this.closest('.logo-item').classList.add('has-error')">
+        <span class="logo-fallback">Wise</span>
+      </div>
+      <div class="logo-item">
+        <img src="https://cdn.trustpilot.net/consumersite-businessunitimages/56444bd10000ff000585701c/profile-description/OFX_SOLO_LOGO_RGB.png" alt="OFX" onerror="this.closest('.logo-item').classList.add('has-error')">
+        <span class="logo-fallback">OFX</span>
+      </div>
+      <div class="logo-item">
+        <img src="https://unicorn-images.b-cdn.net/92253ae6-e1fc-4791-88da-273e65861ff1?optimizer=gif" alt="Travelport" onerror="this.closest('.logo-item').classList.add('has-error')">
+        <span class="logo-fallback">Travelport</span>
+      </div>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Fiat_Chrysler_Automobiles_logo.svg/1280px-Fiat_Chrysler_Automobiles_logo.svg.png" alt="FCA" onerror="this.closest('.logo-item').classList.add('has-error')">
+        <span class="logo-fallback">FCA</span>
+      </div>
+      <div class="logo-item">
+        <img src="https://unicorn-images.b-cdn.net/cbf69727-4d3c-4b6e-93f4-52c4947db580?optimizer=gif&width=446&height=54" alt="P&amp;G" onerror="this.closest('.logo-item').classList.add('has-error')">
+        <span class="logo-fallback">P&amp;G</span>
+      </div>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Deutsche_Bank-Logo.svg/1280px-Deutsche_Bank-Logo.svg.png" alt="Deutsche Bank" onerror="this.closest('.logo-item').classList.add('has-error')">
+        <span class="logo-fallback">Deutsche Bank</span>
+      </div>
+
+      <!-- Set B — duplicate for seamless loop -->
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Accenture.svg/1200px-Accenture.svg.png" alt="Accenture" onerror="this.closest('.logo-item').classList.add('has-error')">
+        <span class="logo-fallback">Accenture</span>
+      </div>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Oracle_logo.svg/1280px-Oracle_logo.svg.png" alt="Oracle" onerror="this.closest('.logo-item').classList.add('has-error')">
+        <span class="logo-fallback">Oracle</span>
+      </div>
+      <div class="logo-item">
+        <img src="https://wp.logos-download.com/wp-content/uploads/2022/11/Spendesk_Logo-700x107.png" alt="Spendesk" onerror="this.closest('.logo-item').classList.add('has-error')">
+        <span class="logo-fallback">Spendesk</span>
+      </div>
+      <div class="logo-item">
+        <img src="https://cdn.worldvectorlogo.com/logos/wise-2.svg" alt="Wise" onerror="this.closest('.logo-item').classList.add('has-error')">
+        <span class="logo-fallback">Wise</span>
+      </div>
+      <div class="logo-item">
+        <img src="https://cdn.trustpilot.net/consumersite-businessunitimages/56444bd10000ff000585701c/profile-description/OFX_SOLO_LOGO_RGB.png" alt="OFX" onerror="this.closest('.logo-item').classList.add('has-error')">
+        <span class="logo-fallback">OFX</span>
+      </div>
+      <div class="logo-item">
+        <img src="https://unicorn-images.b-cdn.net/92253ae6-e1fc-4791-88da-273e65861ff1?optimizer=gif" alt="Travelport" onerror="this.closest('.logo-item').classList.add('has-error')">
+        <span class="logo-fallback">Travelport</span>
+      </div>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Fiat_Chrysler_Automobiles_logo.svg/1280px-Fiat_Chrysler_Automobiles_logo.svg.png" alt="FCA" onerror="this.closest('.logo-item').classList.add('has-error')">
+        <span class="logo-fallback">FCA</span>
+      </div>
+      <div class="logo-item">
+        <img src="https://unicorn-images.b-cdn.net/cbf69727-4d3c-4b6e-93f4-52c4947db580?optimizer=gif&width=446&height=54" alt="P&amp;G" onerror="this.closest('.logo-item').classList.add('has-error')">
+        <span class="logo-fallback">P&amp;G</span>
+      </div>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Deutsche_Bank-Logo.svg/1280px-Deutsche_Bank-Logo.svg.png" alt="Deutsche Bank" onerror="this.closest('.logo-item').classList.add('has-error')">
+        <span class="logo-fallback">Deutsche Bank</span>
+      </div>
+
+    </div><!-- /logos-track -->
+  </div><!-- /logos-viewport -->
+</section>
+
+<!-- ─── Case Studies ─────────────────────────────────── -->
+<section id="case-studies">
+  <div class="container">
+    <div class="section-label">Experience in detail</div>
+    <h2 class="section-title">Where I&rsquo;ve built &amp; scaled growth engines</h2>
+    <p style="font-size:16px;color:var(--text-muted);margin-bottom:56px;">A selection of case studies from recent roles, highlighting how I&rsquo;ve built, scaled, and optimised go-to-market and growth engines across B2B technology, SaaS, and fintech.</p>
+
+    <div class="cs-grid">
+
+      <!-- ══ 1. OFX ══════════════════════════════════ -->
+      <article class="cs-card fade-up">
+        <div class="cs-header" style="flex-direction:column;align-items:flex-start;gap:10px;">
+          <img src="https://cdn.trustpilot.net/consumersite-businessunitimages/56444bd10000ff000585701c/profile-description/OFX_SOLO_LOGO_RGB.png" alt="OFX" style="height:36px;width:auto;object-fit:contain;">
+          <div class="cs-header-meta">
+            <div class="cs-role-line">Marketing Director &mdash; SaaS Spend Management</div>
+            <div class="cs-badge">
+              <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
+              Fintech &middot; SaaS
+            </div>
+          </div>
+        </div>
+        <div class="cs-body">
+          <p class="cs-context">OFX historically operated as a traditional FX provider serving corporates with international payment and hedging needs such as transfers, limit orders, and forwards. Following the acquisition of Australian spend management platform Paytron, the company began transitioning into an all-in-one payments platform combining global payments, FX, and spend management.
+
+            I was brought in to build and lead the go-to-market across Europe and North America, defining the full marketing engine required to support this transition. This included channel strategy, demand generation, positioning, and end-to-end GTM execution with P&amp;L ownership.
+            </p>
+          <div class="cs-outcome">
+            <svg class="cs-outcome-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            <div class="cs-outcome-text"><ul style="padding-left:22px; margin:16px 0;">
+              <li style="margin-bottom:10px; line-height:1.6;">
+                Built and led the GTM transition from FX provider to an all-in-one payments platform, owning end-to-end marketing strategy, channel performance, and European market expansion.
+              </li>
+              <li style="line-height:1.6;">
+                Generated a structured full-funnel marketing model producing more than $20M in pipeline across priority European and North American markets, creating a repeatable blueprint ready for rollout in Australia and broader APAC expansion.
+              </li>
+            </ul>
+            
+            <style>
+            ul li::marker {
+              color: #3d9e6e;
+            }
+            </style></div>
+          </div>
+          <div class="accordions">
+            <details class="accordion">
+              <summary>Key Challenges</summary>
+              <div class="accordion-body">
+                <ul>
+                  <li>Repositioning OFX from its well-known FX/payments brand into a credible B2B SaaS spend management platform &mdash; a fundamentally different buyer persona and buying motion</li>
+                  <li>Building pipeline in new European markets with limited brand recognition against established spend management incumbents</li>
+                  <li>Establishing scalable full-funnel demand generation infrastructure while simultaneously owning P&L accountability</li>
+                  <li>Navigating the shift from transactional FX growth motions to subscription SaaS acquisition and retention economics</li>
+                </ul>
+              </div>
+            </details>
+            <details class="accordion">
+              <summary>What I did to shift the needle?</summary>
+              <div class="accordion-body">
+                <ul>
+                  <li>Owned and optimised the full-funnel marketing mix including paid, organic, content, events, and partner channels</li>
+                  <li>Designed and executed European go-to-market strategy covering market entry, ICP definition, and channel allocation</li>
+                  <li>Built performance reporting infrastructure to track pipeline contribution and marketing-sourced revenue across regions</li>
+                  <li>Aligned content and positioning to the new SaaS buyer (CFO, finance leaders) rather than the historic FX trading buyer</li>
+                  <li>Led cross-functional alignment between marketing, sales, and product on GTM priorities and launch cadence</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+          <div class="bento-label">Work samples &amp; highlights</div>
+          <div class="bento-grid">
+            <div class="bento-cell bento-video-main" style="padding:0;overflow:hidden;">
+              <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
+                <source src="VIDEOS/OFX%20Spend%20Management%20Launch%20Video.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="bento-cell bento-stat">
+              <div class="bento-stat-num">EU</div>
+              <div class="bento-stat-label">Market expansion across Europe</div>
+            </div>
+            <div class="bento-cell bento-video-sm-b" style="padding:0;overflow:hidden;background:#f0f4f2;">
+              <img src="IMAGES/OFX%20Battle%20card%20vs%20Payhawk%20Image.png" alt="OFX Battle card vs Payhawk" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div class="bento-cell bento-video-sm-a" style="background:#f5f7fa;padding:0;overflow:hidden;align-items:flex-start;">
+              <div class="bento-scroll-track">
+                <img src="IMAGES/OFX%20transition.webp" alt="OFX product transition — from FX to spend management platform">
+                <img src="IMAGES/OFX%20transition.webp" alt="" aria-hidden="true">
+              </div>
+            </div>
+            <div class="bento-cell bento-work-sample" style="padding:0;overflow:hidden;background:#f0f4f2;">
+              <img src="IMAGES/OFX%20Accountex%20Event%20Image.jpg" alt="OFX Accountex Event" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ══ 2. Spendesk ═══════════════════════════════ -->
+      <article class="cs-card fade-up">
+        <div class="cs-header" style="flex-direction:column;align-items:flex-start;gap:10px;">
+          <img src="https://wp.logos-download.com/wp-content/uploads/2022/11/Spendesk_Logo-700x107.png" alt="Spendesk" style="height:36px;width:auto;object-fit:contain;">
+          <div class="cs-header-meta">
+            <div class="cs-role-line">Marketing Director &middot; Spend Management SaaS &middot; Post Series C (€100M raised)</div>
+            <div class="cs-badge">
+              <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
+              Fintech &middot; SaaS
+            </div>
+          </div>
+        </div>
+        <div class="cs-body">
+          <p class="cs-context">Series C–D spend management SaaS, rapid European expansion, mid-market and SMB focus. I led and grew the marketing team with ownership of full-funnel performance, channel mix, content, GTM and P&L. Spendesk had just raised €100M and was scaling rapidly, but the growth engine was heavily outbound-led and increasingly inefficient with rising CAC. I led the strategic repositioning and GTM overhaul to drive sustainable, inbound-led growth.</p>
+          <div class="cs-outcome">
+            <svg class="cs-outcome-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            <div class="cs-outcome-text">Repositioned Spendesk from &ldquo;expense automation&rdquo; to &ldquo;House of Spendesk&rdquo; &mdash; a unified spend management suite narrative spanning cards, AP, invoice workflows, and ERP integrations &mdash; enabling the platform to move upmarket.</div>
+          </div>
+          <div class="accordions">
+            <details class="accordion">
+              <summary>Key Challenges</summary>
+              <div class="accordion-body">
+                <ul>
+                  <li>Growth engine was heavily outbound-dependent, with increasing CAC at scale making the model unsustainable</li>
+                  <li>Positioning was too narrow (&ldquo;expense automation&rdquo;) relative to the actual platform breadth, limiting enterprise appeal</li>
+                  <li>Needed to build an owned-channel alternative to reduce reliance on paid acquisition</li>
+                  <li>Moving upmarket required a fundamentally different narrative, proof points, and sales motion</li>
+                </ul>
+              </div>
+            </details>
+            <details class="accordion">
+              <summary>What I did to shift the needle?</summary>
+              <div class="accordion-body">
+                <ul>
+                  <li>Designed and deployed <span class="metric-highlight">House of Spendesk</span> &mdash; a unified platform narrative covering spend cards, accounts payable, invoice workflows, and ERP integrations</li>
+                  <li>Aligned messaging, sales playbooks, and content across all channels to the repositioned brand story</li>
+                  <li>Scaled and operationalised <span class="metric-highlight">CFO Connect</span> &mdash; Spendesk&rsquo;s finance leader community &mdash; as a strategic owned channel to build pipeline and credibility with upmarket buyers</li>
+                  <li>Developed segment-specific value propositions for mid-market and enterprise CFOs and finance leaders</li>
+                  <li>Shifted GTM balance toward inbound and community-led motion to reduce outbound CAC dependency</li>
+                </ul>
+              </div>
+            </details>
+            <details class="accordion">
+              <summary>Notable Outcomes</summary>
+              <div class="accordion-body">
+                <ul>
+                  <li><span class="metric-highlight">ARR growth:</span> Scaled from ±€20M to €50M+ in ±18 months post-Series C.</li>
+                  <li><span class="metric-highlight">PLG + conversion:</span> Increased demo conversions by <span class="metric-highlight">+94%</span> via PLG initiative and optimised website UX testing; introduced PQL model, generating <span class="metric-highlight">1k+ highly converting accounts</span> in one fiscal year.</li>
+                  <li>Reduced blended CAC by <span class="metric-highlight">±40%</span> while sustaining opportunity and closed-won volumes.</li>
+                  <li>Delivered <span class="metric-highlight">±26% YoY organic traffic growth</span> and doubled brand keyword impressions through SEO + content hubs.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+          <div class="bento-label">Work samples &amp; highlights</div>
+          <div class="bento-grid">
+            <div class="bento-cell bento-video-main" style="padding:0;overflow:hidden;">
+              <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
+                <source src="VIDEOS/Spendesk%20Supersatisfying%20spend%20campaign.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="bento-cell bento-stat">
+              <div class="bento-stat-num">€100M</div>
+              <div class="bento-stat-label">Series C raised pre-engagement</div>
+            </div>
+            <div class="bento-cell bento-video-sm-a" style="padding:0;overflow:hidden;align-items:flex-start;">
+              <div class="bento-scroll-track">
+                <img src="IMAGES/Spendesk%20brand%20campaign%201.jpg" alt="Spendesk brand campaign 1" style="width:100%;display:block;">
+                <img src="IMAGES/Spendesk%20brand%20campaign%202.jpg" alt="Spendesk brand campaign 2" style="width:100%;display:block;">
+                <img src="IMAGES/Spendesk%20brand%20campaign%203.jpg" alt="Spendesk brand campaign 3" style="width:100%;display:block;">
+                <img src="IMAGES/Spendesk%20brand%20campaign%201.jpg" alt="" aria-hidden="true" style="width:100%;display:block;">
+                <img src="IMAGES/Spendesk%20brand%20campaign%202.jpg" alt="" aria-hidden="true" style="width:100%;display:block;">
+                <img src="IMAGES/Spendesk%20brand%20campaign%203.jpg" alt="" aria-hidden="true" style="width:100%;display:block;">
+              </div>
+            </div>
+            <div class="bento-cell bento-video-sm-b" style="padding:0;overflow:hidden;align-items:flex-start;">
+              <div class="bento-scroll-track">
+                <img src="IMAGES/Spendesk%20CFO%20Salary%20Benchmark.webp" alt="Spendesk CFO Salary Benchmark" style="width:100%;display:block;">
+                <img src="IMAGES/Spendesk%20CFO%20Salary%20Guide.webp" alt="Spendesk CFO Salary Guide" style="width:100%;display:block;">
+                <img src="IMAGES/Spendesk%20CFO%20Trends.webp" alt="Spendesk CFO Trends" style="width:100%;display:block;">
+                <img src="IMAGES/Spendesk%20CFO%20Salary%20Benchmark.webp" alt="" aria-hidden="true" style="width:100%;display:block;">
+                <img src="IMAGES/Spendesk%20CFO%20Salary%20Guide.webp" alt="" aria-hidden="true" style="width:100%;display:block;">
+                <img src="IMAGES/Spendesk%20CFO%20Trends.webp" alt="" aria-hidden="true" style="width:100%;display:block;">
+              </div>
+            </div>
+            <div class="bento-cell bento-work-sample" style="padding:0;overflow:hidden;align-items:flex-start;background:#f0f4f2;">
+              <div class="bento-scroll-track">
+                <img src="IMAGES/Spendesk%20Accomplishment%20overview%201.webp" alt="Spendesk Accomplishment overview 1" style="width:100%;display:block;">
+                <img src="IMAGES/Spendesk%20Accomplishment%20overview%202.png" alt="Spendesk Accomplishment overview 2" style="width:100%;display:block;">
+                <img src="IMAGES/Spendesk%20Accomplishment%20overview%203.jpg" alt="Spendesk Accomplishment overview 3" style="width:100%;display:block;">
+                <img src="IMAGES/Spendesk%20Accomplishment%20overview%201.webp" alt="" aria-hidden="true" style="width:100%;display:block;">
+                <img src="IMAGES/Spendesk%20Accomplishment%20overview%202.png" alt="" aria-hidden="true" style="width:100%;display:block;">
+                <img src="IMAGES/Spendesk%20Accomplishment%20overview%203.jpg" alt="" aria-hidden="true" style="width:100%;display:block;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ══ 3. Wise ════════════════════════════════════ -->
+      <article class="cs-card fade-up">
+        <div class="cs-header" style="flex-direction:column;align-items:flex-start;gap:10px;">
+          <img src="https://cdn.worldvectorlogo.com/logos/wise-2.svg" alt="Wise" style="height:36px;width:auto;object-fit:contain;">
+          <div class="cs-header-meta">
+            <div class="cs-role-line">Head of B2B Marketing &middot; Global &middot; Wise Business &amp; Wise Platform</div>
+            <div class="cs-badge">
+              <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
+              Fintech &middot; Global
+            </div>
+          </div>
+        </div>
+        <div class="cs-body">
+          <p class="cs-context">Wise is widely known for B2C low-cost international transfers. My mandate was to build and scale B2B globally across two distinct offerings: Wise Business (SMB account) and Wise Platform (payment infrastructure API for banks, fintechs, payroll providers, and spend-management platforms).</p>
+          <div class="cs-outcome">
+            <svg class="cs-outcome-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            <div class="cs-outcome-text">
+              <span class="metric-highlight">B2B grew from 3% to 25% of Wise&rsquo;s total FX volume</span> (2022&ndash;2025). Wise Platform generated <span class="metric-highlight">$7M ARR in year one</span> through verticalised inbound campaigns. Established a repeatable B2B GTM engine now used to win partnerships with leading banks, payroll providers, and fintech platforms.<br><br> I am also proud to have been actively involved in the global brand transition from TransferWise to Wise, overseeing the rollout of the new brand identity, visual system, and messaging shift across B2B marketing channels.
+            </div>
+          </div>
+          <div class="accordions">
+            <details class="accordion">
+              <summary>Key Challenges</summary>
+              <div class="accordion-body">
+                <ul>
+                  <li>Wise&rsquo;s strong B2C identity created friction in building B2B credibility with enterprise buyers, banks, and platform partners</li>
+                  <li>Two fundamentally different products (SMB account vs infrastructure API) required distinct positioning, personas, and motions</li>
+                  <li>Building global B2B GTM from near-zero across EMEA, APAC, and North America simultaneously</li>
+                  <li>Wise Platform required a co-branding framework (&ldquo;Powered by Wise&rdquo;) that worked across partner brands without diluting either</li>
+                  <li>Scaling inbound for an API product with a long, complex enterprise sales cycle</li>
+                </ul>
+              </div>
+            </details>
+            <details class="accordion">
+              <summary>What I did to shift the needle?</summary>
+              <div class="accordion-body">
+                <ul>
+                  <li>Defined precise positioning and proof points for <span class="metric-highlight">Wise Business vs Wise Platform</span> &mdash; segment-specific value props for SMB, mid-market, and enterprise</li>
+                  <li>Introduced scalable ABM programmes for priority accounts and verticals (banks, payroll, spend-management), enabling inbound sales pipeline</li>
+                  <li>Led <span class="metric-highlight">Wise Platform&rsquo;s global brand and communications</span> &mdash; including the &ldquo;Powered by Wise Platform&rdquo; co-branding framework adopted by bank and fintech partners</li>
+                  <li>Designed B2B event strategy and presence at key fintech and banking events across EMEA, APAC, and North America</li>
+                  <li>Grew B2B from a side business to a <span class="metric-highlight">material growth driver: 3% &rarr; 25% of total FX volume</span> (2022&ndash;2025)</li>
+                  <li>Generated <span class="metric-highlight">$7M ARR in year one</span> for Wise Platform&rsquo;s API offering through inbound, verticalised campaigns for banks and fintechs</li>
+                </ul>
+              </div>
+            </details>
+            <details class="accordion">
+              <summary>Notable Outcomes</summary>
+              <div class="accordion-body">
+                <ul>
+                  <li>Defined precise positioning and proof points for <span class="metric-highlight">Wise Business</span> vs <span class="metric-highlight">Wise Platform</span>, establishing segment-specific value propositions for SMB, mid-market, and enterprise buyers.</li>
+                  <li>Launched scalable <span class="metric-highlight">ABM programmes</span> targeting priority accounts and verticals including banks, fintechs, payroll providers, and spend-management platforms, building the first repeatable enterprise inbound pipeline.</li>
+                  <li>Led <span class="metric-highlight">Wise Platform&rsquo;s global brand and communications</span>, including the &ldquo;Powered by Wise Platform&rdquo; co-branding framework adopted by partner banks and fintech platforms.</li>
+                  <li>Built the foundational <span class="metric-highlight">B2B growth foundation</span> that enabled Wise to scale from <span class="metric-highlight">3% to 25% of total FX volume by 2025</span>, including generating <span class="metric-highlight">$7M ARR in year one</span> for the Wise Platform API through verticalised inbound campaigns.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+          <div class="bento-label">Work samples &amp; highlights</div>
+          <div class="bento-grid">
+            <div class="bento-cell bento-video-main" style="padding:0;overflow:hidden;">
+              <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
+                <source src="VIDEOS/Wise%20Rebrand%20Video.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="bento-cell bento-stat">
+              <div class="bento-stat-num">25%</div>
+              <div class="bento-stat-label">B2B share of total FX volume (from 3%)</div>
+            </div>
+            <div class="bento-cell bento-video-sm-a" style="padding:0;overflow:hidden;">
+              <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
+                <source src="https://d3faj0w6aqatyx.cloudfront.net/uploads/2025/02/1_WisePlatform_KeyImage.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="bento-cell bento-video-sm-b" style="padding:0;overflow:hidden;background:#f0f4f2;">
+              <img src="IMAGES/Wise%20Platform%20API%20Proposition%20Image.png" alt="Wise Platform API Proposition" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div class="bento-cell bento-work-sample" style="padding:0;overflow:hidden;align-items:flex-start;background:#f0f4f2;">
+              <div class="bento-scroll-track">
+                <img src="IMAGES/Wise%20Platform%20Partner%20Google%20Pay.jpg" alt="Wise Platform Partner Google Pay" style="width:100%;display:block;">
+                <img src="IMAGES/Wise%20Platform%20Partner%20Lunar.jpg" alt="Wise Platform Partner Lunar" style="width:100%;display:block;">
+                <img src="IMAGES/Wise%20Platform%20Partner%20Payhawk.jpeg" alt="Wise Platform Partner Payhawk" style="width:100%;display:block;">
+                <img src="IMAGES/Wise%20Platform%20Partner%20Standard%20Chartered.png" alt="Wise Platform Partner Standard Chartered" style="width:100%;display:block;">
+                <img src="IMAGES/Wise%20Platform%20Partner%20Travelex.png" alt="Wise Platform Partner Travelex" style="width:100%;display:block;">
+                <img src="IMAGES/Wise%20Platform%20Partner%20Unicredit%20bank.jpg" alt="Wise Platform Partner Unicredit Bank" style="width:100%;display:block;">
+                <img src="IMAGES/Wise%20Platform%20Partner%20Google%20Pay.jpg" alt="" aria-hidden="true" style="width:100%;display:block;">
+                <img src="IMAGES/Wise%20Platform%20Partner%20Lunar.jpg" alt="" aria-hidden="true" style="width:100%;display:block;">
+                <img src="IMAGES/Wise%20Platform%20Partner%20Payhawk.jpeg" alt="" aria-hidden="true" style="width:100%;display:block;">
+                <img src="IMAGES/Wise%20Platform%20Partner%20Standard%20Chartered.png" alt="" aria-hidden="true" style="width:100%;display:block;">
+                <img src="IMAGES/Wise%20Platform%20Partner%20Travelex.png" alt="" aria-hidden="true" style="width:100%;display:block;">
+                <img src="IMAGES/Wise%20Platform%20Partner%20Unicredit%20bank.jpg" alt="" aria-hidden="true" style="width:100%;display:block;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ══ 4. Unit4 ═══════════════════════════════════ -->
+      <article class="cs-card fade-up">
+        <div class="cs-header" style="flex-direction:column;align-items:flex-start;gap:10px;">
+          <img src="https://unicorn-images.b-cdn.net/92253ae6-e1fc-4791-88da-273e65861ff1?optimizer=gif" alt="Unit4" style="height:36px;width:auto;object-fit:contain;">
+          <div class="cs-header-meta">
+            <div class="cs-role-line">Global Marketing Director &middot; Enterprise ERP &middot; UKI, DACH, Nordics, North America</div>
+            <div class="cs-badge">
+              <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
+              Enterprise Software &middot; ERP
+            </div>
+          </div>
+        </div>
+        <div class="cs-body">
+          <p class="cs-context">Unit4 is an enterprise ERP and software provider with a strong established footprint in public services and education. My mandate was to build credibility and pipeline in private-sector verticals across North America, UKI, DACH, and the Nordics, where competitors were strongly positioned and Unit4 had limited proof. Achieved through the regional teams of growth marketers and SDRs I built and led across key markets, operating within a clearly defined end-to-end marketing and sales funnel with structured sales sequences and shared performance targets across the pipeline.</p>
+          <div class="cs-outcome">
+            <svg class="cs-outcome-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            <div class="cs-outcome-text">
+              Generated <span class="metric-highlight">$40&ndash;50M in qualified pipeline</span> (vs $28M target) with ~25% conversion over 16 months. Marketing impact contributed to a stronger growth story ahead of <span class="metric-highlight">Unit4&rsquo;s $2 billion acquisition by TA Associates</span>.
+            </div>
+          </div>
+          <div class="accordions">
+            <details class="accordion">
+              <summary>Key Challenges</summary>
+              <div class="accordion-body">
+                <ul>
+                  <li>Unit4 faced a <em>&ldquo;proof gap&rdquo;</em> in private-sector verticals &mdash; the brand was trusted in public services but lacked credibility with private-sector buyers</li>
+                  <li>Vertical focus was unclear: too many industries, no differentiated messaging, spread too thin</li>
+                  <li>Enterprise buying complexity with long cycles and multiple stakeholders required coordinated ABM motions</li>
+                  <li>Inconsistent sales enablement across Tier-1 markets (UKI, DACH, Nordics, North America) with different maturity levels</li>
+                  <li>Aggressive pipeline targets required building a new demand engine from the ground up within the first 12 months</li>
+                </ul>
+              </div>
+            </details>
+            <details class="accordion">
+              <summary>What I did to shift the needle?</summary>
+              <div class="accordion-body">
+                <ul>
+                  <li>Shaped the <span class="metric-highlight">People Experience brand</span> with industry-specific value propositions for top private-sector verticals</li>
+                  <li>Built integrated, industry-led campaigns using research reports, webinars, ROI tools, solution tours, and partner plays</li>
+                  <li>Improved SDR sequences and sales enablement with messaging guides, pitch decks, ROI stories, and case studies across all Tier-1 markets</li>
+                  <li>Implemented <span class="metric-highlight">intent and lead scoring model</span> using Bombora integration, increasing lead-to-opportunity conversion</li>
+                  <li>Built an <span class="metric-highlight">ABM-led demand engine</span> across regions using 6sense + Bombora + Lattice for intent signals, Marketo for nurture, and Salesforce CRM</li>
+                </ul>
+              </div>
+            </details>
+            <details class="accordion">
+              <summary>Notable Outcomes</summary>
+              <div class="accordion-body">
+                <ul>
+                  <li>Generated <span class="metric-highlight">$40&ndash;50M qualified pipeline</span> in 16 months against a $28M target (&plusmn;25% average conversion)</li>
+                  <li>Marketing contribution to a <span class="metric-highlight">$2B acquisition by TA Associates</span></li>
+                  <li>Increased lead-to-opportunity conversion by <span class="metric-highlight">32%</span></li>
+                  <li><span class="metric-highlight">94% increased demo request conversion</span> to opportunity thanks to improved ICP filter</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+          <div class="bento-label">Work samples &amp; highlights</div>
+          <div class="bento-grid">
+            <div class="bento-cell bento-video-main" style="padding:0;overflow:hidden;">
+              <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
+                <source src="VIDEOS/UNIT4%20AEC%20INDUSTRY%20VIDEO.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="bento-cell bento-stat">
+              <div class="bento-stat-num">$40M+</div>
+              <div class="bento-stat-label">Qualified pipeline vs $28M target</div>
+            </div>
+            <div class="bento-cell bento-video-sm-a" style="padding:0;overflow:hidden;">
+              <iframe src="https://player.vimeo.com/video/542702312?autoplay=1&muted=1&loop=1&background=1" frameborder="0" allow="autoplay; fullscreen" style="width:100%;height:100%;display:block;" title="Unit4 video"></iframe>
+            </div>
+            <div class="bento-cell bento-video-sm-b" style="padding:0;overflow:hidden;background:#f0f4f2;">
+              <img src="IMAGES/Unit4%20ERP%20eBook.png" alt="Unit4 ERP eBook" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div class="bento-cell bento-work-sample" style="padding:0;overflow:hidden;background:#f0f4f2;">
+              <div class="bento-hscroll-track">
+                <img src="IMAGES/Unit4%20Funnel%201.webp" alt="Unit4 Funnel 1">
+                <img src="IMAGES/Unit4%20Funnel%202.webp" alt="Unit4 Funnel 2">
+                <img src="IMAGES/Unit4%20Funnel%203.webp" alt="Unit4 Funnel 3">
+                <img src="IMAGES/Unit4%20funnel%204.webp" alt="Unit4 Funnel 4">
+                <img src="IMAGES/Unit4%20Funnel%205.png" alt="Unit4 Funnel 5">
+                <img src="IMAGES/Unit4%20Funnel%201.webp" alt="" aria-hidden="true">
+                <img src="IMAGES/Unit4%20Funnel%202.webp" alt="" aria-hidden="true">
+                <img src="IMAGES/Unit4%20Funnel%203.webp" alt="" aria-hidden="true">
+                <img src="IMAGES/Unit4%20funnel%204.webp" alt="" aria-hidden="true">
+                <img src="IMAGES/Unit4%20Funnel%205.png" alt="" aria-hidden="true">
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ══ 5. Travelport ══════════════════════════════ -->
+      <article class="cs-card fade-up">
+        <div class="cs-header" style="flex-direction:column;align-items:flex-start;gap:10px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Travelport_logo.svg/1280px-Travelport_logo.svg.png" alt="Travelport" style="height:36px;width:auto;object-fit:contain;">
+          <div class="cs-header-meta">
+            <div class="cs-role-line">Head of Global Marketing &mdash; Travelport+ (SaaS GDS) &middot; Team of 4</div>
+            <div class="cs-badge">
+              <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
+              Travel Tech &middot; SaaS
+            </div>
+          </div>
+        </div>
+        <div class="cs-body">
+          <p class="cs-context">Travelport is one of the &ldquo;big three&rdquo; Global Distribution System (GDS) providers, serving 120k+ travel agencies worldwide. I led global marketing for Travelport+ &mdash; the company&rsquo;s first cloud-based SaaS GDS solution &mdash; designed to replace legacy on-premise systems for OTAs, TMCs, and retail travel agencies.</p>
+          <div class="cs-outcome">
+            <svg class="cs-outcome-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            <div class="cs-outcome-text">
+              <span class="metric-highlight">A/MQL to closed-won conversion improved from 8% to 23%</span>. Achieved <span class="metric-highlight">24% increase in client spend</span> and <span class="metric-highlight">12% increase in retention</span> year-on-year. 10k+ existing customers migrated to Travelport+ with thousands of new customers onboarded.
+            </div>
+          </div>
+          <div class="accordions">
+            <details class="accordion">
+              <summary>Key Challenges</summary>
+              <div class="accordion-body">
+                <ul>
+                  <li>GDS market was dominated by legacy on-premise deployments &mdash; convincing agencies to migrate to a SaaS model was a fundamental change management challenge</li>
+                  <li>Travelport&rsquo;s brand was strongly associated with traditional GDS infrastructure, making the &ldquo;modern travel tech partner&rdquo; repositioning difficult</li>
+                  <li>Large, fragmented agency base (120k+ agencies globally) with wildly different profiles, without a consistent full-funnel framework</li>
+                  <li>Needed to build acquisition marketing for new agencies while simultaneously running migration campaigns for existing customers</li>
+                </ul>
+              </div>
+            </details>
+            <details class="accordion">
+              <summary>What I did to shift the needle?</summary>
+              <div class="accordion-body">
+                <ul>
+                  <li>Defined and codified the <span class="metric-highlight">Travelport+ SaaS proposition</span> &mdash; the first clear positioning for the platform as a modern travel tech solution</li>
+                  <li>Designed a full-funnel demand and ABM engine with ICPs, segmentation, and bespoke plays per agency type (OTA, TMC, retail)</li>
+                  <li>Launched integrated acquisition and migration campaigns using thought leadership, research, webinars, quizzes, and guided product tours</li>
+                  <li>Implemented a data-driven operating model including lead scoring, A/B testing, Salesforce CRM cleanup, nurture programmes, and sales enablement</li>
+                </ul>
+              </div>
+            </details>
+            <details class="accordion">
+              <summary>Notable Outcomes</summary>
+              <div class="accordion-body">
+                <ul>
+                  <li>Improved <span class="metric-highlight">A/MQL to closed-won from 8% to 23%</span> &mdash; a near-3x improvement in conversion quality</li>
+                  <li>Delivered <span class="metric-highlight">24% increase in client spend</span> and <span class="metric-highlight">12% increase in retention</span> year-on-year via lifecycle marketing</li>
+                  <li>Migrated <span class="metric-highlight">10k+ existing customers</span> to Travelport+, onboarded thousands of new agencies</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+          <div class="bento-label">Work samples &amp; highlights</div>
+          <div class="bento-grid">
+            <div class="bento-cell bento-video-main" style="padding:0;overflow:hidden;">
+              <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
+                <source src="VIDEOS/Travelport%20Plus%20Launch%20Video.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="bento-cell bento-stat">
+              <div class="bento-stat-num">8→23%</div>
+              <div class="bento-stat-label">A/MQL to closed-won conversion</div>
+            </div>
+            <div class="bento-cell bento-video-sm-a" style="padding:0;overflow:hidden;background:#f0f4f2;">
+              <img src="IMAGES/Travelport%20Online%20Travel%20Trends%202020%20eBook%20Banner.png" alt="Travelport Online Travel Trends 2020 eBook" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div class="bento-cell bento-video-sm-b" style="padding:0;overflow:hidden;background:#f0f4f2;">
+              <img src="IMAGES/Travelport%20Mobile%20Travel%20Trends%20Page.webp" alt="Travelport Mobile Travel Trends" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div class="bento-cell bento-work-sample" style="padding:0;overflow:hidden;background:#f0f4f2;">
+              <div class="bento-hscroll-track">
+                <img src="IMAGES/Travelport%20Funnel%201.webp" alt="Travelport Funnel 1">
+                <img src="IMAGES/Travelport%20Funnel%202.webp" alt="Travelport Funnel 2">
+                <img src="IMAGES/Travelport%20Funnel%203.webp" alt="Travelport Funnel 3">
+                <img src="IMAGES/Travelport%20Funnel%201.webp" alt="" aria-hidden="true">
+                <img src="IMAGES/Travelport%20Funnel%202.webp" alt="" aria-hidden="true">
+                <img src="IMAGES/Travelport%20Funnel%203.webp" alt="" aria-hidden="true">
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ══ 6. Oracle ══════════════════════════════════ -->
+      <article class="cs-card fade-up">
+        <div class="cs-header" style="flex-direction:column;align-items:flex-start;gap:10px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Oracle_logo.svg/1280px-Oracle_logo.svg.png" alt="Oracle" style="height:36px;width:auto;object-fit:contain;">
+          <div class="cs-header-meta">
+            <div class="cs-role-line">EMEA Marketing Lead &mdash; Oracle ERP Cloud &middot; Tier-1 EMEA Markets</div>
+            <div class="cs-badge">
+              <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
+              Enterprise Cloud &middot; ERP
+            </div>
+          </div>
+        </div>
+        <div class="cs-body">
+          <p class="cs-context">Oracle is one of the world&rsquo;s largest cloud and software companies. I was brought in as an interim EMEA pillar lead post the NetSuite ERP acquisition, which became a 2-year assignment. I owned global marketing for Oracle ERP Cloud and SCM Cloud SaaS applications across Tier-1 EMEA markets: UKI, DACH, France, Italy, UAE, Saudi Arabia, and South Africa.</p>
+          <div class="cs-outcome">
+            <svg class="cs-outcome-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            <div class="cs-outcome-text">
+              Drove <span class="metric-highlight">±€120M annual pipeline</span> for ERP and SCM Cloud applications. <span class="metric-highlight">Increased share of voice by 8%</span> across Europe. Doubled MQL-to-opportunity conversion and improved retention rate by 18%. <br><br>
+              Played a key role in Oracle’s global <strong style="color:#3d9e6e;">Your Tomorrow Today</strong> brand campaign, repositioning Oracle ERP from legacy on-premise software to a modern cloud-based SaaS platform, helping establish Oracle as the leading cloud ERP provider across EMEA.
+            </div>
+          </div>
+          <div class="accordions">
+            <details class="accordion">
+              <summary>Key Challenges</summary>
+              <div class="accordion-body">
+                <ul>
+                  <li>Oracle had just acquired NetSuite: needed a clearly segmented, cohesive GTM narrative spanning both Oracle ERP Cloud (enterprise) and NetSuite (SMB) without cannibalising either</li>
+                  <li>Aggressive <span class="metric-highlight">€100M+ annual pipeline target</span> with limited historical framework for marketing-sourced attribution</li>
+                  <li>EMEA region spanned vastly different market profiles from SMB in Southern Europe to large enterprise in UK and DACH</li>
+                  <li>High inbound lead volumes were not converting &mdash; MQL quality, routing, and SDR alignment needed fundamental restructuring</li>
+                  <li>Needed to manage a €2M+ quarterly marketing budget with tight ROI optimisation</li>
+                </ul>
+              </div>
+            </details>
+            <details class="accordion">
+              <summary>What I did to shift the needle?</summary>
+              <div class="accordion-body">
+                <ul>
+                  <li>Designed <span class="metric-highlight">segmented GTMs</span> across SMB, mid-market, and enterprise with distinct propositions, personas, and channel mixes per segment</li>
+                  <li>Built <span class="metric-highlight">industry-specific campaigns</span> for the top 5 target industries per Tier-1 market across EMEA</li>
+                  <li>Orchestrated 1:1, 1:few, and 1:many ABM motions at scale across UKI, DACH, and key growth markets</li>
+                  <li>Led a <span class="metric-highlight">global rebrand</span> positioning Oracle as the #1 cloud SaaS ERP vendor, redeploying messaging and content across all channels</li>
+                  <li>Built a full-funnel inbound framework covering MQL&rarr;SQL&rarr;opportunity&rarr;closed-won with improved scoring, routing, and persona-based nurture</li>
+                  <li>Launched integrated content and media programmes including thought leadership, industry reports, webinars, landing hubs, and retargeting</li>
+                  <li>Tools used: Eloqua, Adobe Analytics, BlueKai, Demandbase, LinkedIn, Hootsuite</li>
+                </ul>
+              </div>
+            </details>
+            <details class="accordion">
+              <summary>Notable Outcomes</summary>
+              <div class="accordion-body">
+                <ul>
+                  <li>Drove <span class="metric-highlight">±€120M annual pipeline</span>, doubled MQL-to-opportunity conversion, and improved retention by 18%</li>
+                  <li>Increased share of voice by <span class="metric-highlight">8% across Europe</span> for Oracle ERP Cloud in a highly competitive landscape.</li>
+                  <li>Improved retention rate by <span class="metric-highlight">18%</span> through targeted lifecycle and retention campaigns.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+          <div class="bento-label">Work samples &amp; highlights</div>
+          <div class="bento-grid">
+            <div class="bento-cell bento-video-main" style="padding:0;overflow:hidden;">
+              <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
+                <source src="VIDEOS/Oracle%20Your%20Tomorrow%20Today%20Campaign%20Video.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="bento-cell bento-stat">
+              <div class="bento-stat-num">€120M</div>
+              <div class="bento-stat-label">Annual pipeline driven across EMEA</div>
+            </div>
+            <div class="bento-cell bento-video-sm-a" style="padding:0;overflow:hidden;background:#f0f4f2;">
+              <img src="IMAGES/Oracle%20Agile%20Finance%20Leaders%20Revealed%20eBook%20Front.png" alt="Oracle Agile Finance Leaders Revealed eBook" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div class="bento-cell bento-video-sm-b" style="padding:0;overflow:hidden;background:#f0f4f2;">
+              <img src="IMAGES/Oracle%20Confessions%20of%20CFO%20%20eBook%20Front.png" alt="Oracle Confessions of CFO eBook" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div class="bento-cell bento-work-sample" style="padding:0;overflow:hidden;background:#f0f4f2;">
+              <div class="bento-hscroll-track">
+                <img src="IMAGES/Oracle%20ABM%20Slide%201.png" alt="Oracle ABM Slide 1">
+                <img src="IMAGES/Oracle%20ABM%20Slide%202.png" alt="Oracle ABM Slide 2">
+                <img src="IMAGES/Oracle%20ABM%20Slide%203.png" alt="Oracle ABM Slide 3">
+                <img src="IMAGES/Oracle%20ABM%20Slide%204.png" alt="Oracle ABM Slide 4">
+                <img src="IMAGES/Oracle%20ABM%20Slide%205.png" alt="Oracle ABM Slide 5">
+                <img src="IMAGES/Oracle%20ABM%20Slide%201.png" alt="" aria-hidden="true">
+                <img src="IMAGES/Oracle%20ABM%20Slide%202.png" alt="" aria-hidden="true">
+                <img src="IMAGES/Oracle%20ABM%20Slide%203.png" alt="" aria-hidden="true">
+                <img src="IMAGES/Oracle%20ABM%20Slide%204.png" alt="" aria-hidden="true">
+                <img src="IMAGES/Oracle%20ABM%20Slide%205.png" alt="" aria-hidden="true">
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ══ 7. Accenture ═══════════════════════════════ -->
+      <article class="cs-card fade-up">
+        <div class="cs-header" style="flex-direction:column;align-items:flex-start;gap:10px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Accenture.svg/1200px-Accenture.svg.png" alt="Accenture" style="height:36px;width:auto;object-fit:contain;">
+          <div class="cs-header-meta">
+            <div class="cs-role-line">Marketing Transformation Lead &middot; Fiat Chrysler, P&amp;G, Deutsche Bank</div>
+            <div class="cs-badge">
+              <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
+              Consulting &middot; Multi-brand &middot; Global
+            </div>
+          </div>
+        </div>
+        <div class="cs-body">
+          <p class="cs-context">Accenture Interactive ran multi-million-pound marketing transformation programmes for global brands. I led market-level transformation delivery across three accounts &mdash; Fiat Chrysler Automobiles, Procter &amp; Gamble, and Deutsche Bank &mdash; transitioning complex in-house and fragmented agency operations to Accenture&rsquo;s global delivery centres.</p>
+          <div class="cs-outcome">
+            <svg class="cs-outcome-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            <div class="cs-outcome-text">
+              <strong style="color:#3d9e6e;">Fiat Chrysler Automobiles:</strong> Led a multi-brand marketing transformation across three core European markets, transitioning website management, email marketing, and digital advertising for multiple car brands from regional agencies to Accenture’s global delivery model.<br><br>
+<strong style="color:#3d9e6e;">P&amp;G:</strong> Scalable delivery model with improved conversion for Gillette & Pantene household products.<br><br>
+
+<strong style="color:#3d9e6e;">Deutsche Bank:</strong> Predictable, trackable execution engine across acquisition channels.
+            </div>
+          </div>
+          <div class="accordions">
+            <details class="accordion">
+              <summary>Key Challenges</summary>
+              <div class="accordion-body">
+                <ul>
+                  <li>Fragmented operating models across three major accounts &mdash; each used different agencies, tools, reporting frameworks, and governance structures</li>
+                  <li>Hard to scale performance when each market operated independently with different tooling and reporting</li>
+                  <li>Running large-scale marketing transformation <em>and</em> martech modernisation simultaneously, without disrupting live campaigns</li>
+                  <li>Managing complex stakeholder landscapes across client teams, incumbent agencies, and Accenture delivery centres across multiple continents</li>
+                  <li>Building institutional knowledge transfer across Poland, Romania, India, and Costa Rica delivery teams</li>
+                </ul>
+              </div>
+            </details>
+            <details class="accordion">
+              <summary>What I did to shift the needle?</summary>
+              <div class="accordion-body">
+                <ul>
+                  <li>Diagnosed and indexed the &ldquo;as-is&rdquo; state for each account through stakeholder discovery, ecosystem mapping, and marketing maturity assessment</li>
+                  <li>Designed the &ldquo;to-be&rdquo; operating models including RACI frameworks, runbooks, workflows, templates, and QA checklists for each client</li>
+                  <li>Defined SLAs and a full service catalogue by marketing channel, establishing clear accountability and performance benchmarks</li>
+                  <li>Put governance structures in place: weekly ops cadences, performance reviews, and cross-functional alignment rituals</li>
+                  <li>Transitioned execution to global delivery teams in Poland, Romania, India, and Costa Rica with structured knowledge transfer programmes</li>
+                  <li>Embedded experimentation frameworks and quality control processes to maintain performance during and after transition</li>
+                  <li>Enabled martech modernisation alongside delivery: CMS + marketing automation implementation and customer journey builds</li>
+                  <li>For <strong>Fiat Chrysler</strong>: built B2C lead generation engine for test-drive bookings across multiple car brands</li>
+                  <li>Developed team management skills with world-class frameworks, leading diverse global matrix teams across web, content, analytics, campaign, and technical implementation disciplines</li>
+                </ul>
+              </div>
+            </details>
+            <details class="accordion">
+              <summary>Notable Outcomes</summary>
+              <div class="accordion-body">
+                <ul>
+                  <li><strong>Deutsche Bank:</strong> Established a predictable, trackable execution engine across multiple organic and paid acquisition channels for their Asset Management fund DWS Direkt, reducing dependency on fragmented agency setups and centralised for multiple markets.</li>
+                  <li><strong>Procter &amp; Gamble:</strong> Enabled scalable delivery of cross-channel programmes through a unified marketing ops model and stronger campaign lifecycle execution discipline with improved conversion for Gillette shaving products.</li>
+                  <li><strong>Fiat Chrysler Automobiles:</strong> Delivered a structured transition that enabled Accenture delivery teams to run multi-brand, multi-market digital marketing operations with clear governance and repeatable processes, while also building a robust B2C lead generation engine that drove test-drive bookings across multiple car brands and markets.</li>
+                </ul>
+              </div>
+            </details>
+          </div>
+          <div class="bento-label">Work samples &amp; highlights</div>
+          <div class="bento-grid">
+            <div class="bento-cell bento-video-main" style="padding:0;overflow:hidden;">
+              <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
+                <source src="VIDEOS/Accenture%20Fiat500%20Abarth%20Launch%20Video.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="bento-cell bento-stat">
+              <div class="bento-stat-num">3</div>
+              <div class="bento-stat-label">Global enterprise accounts: Fiat, P&amp;G, Deutsche Bank</div>
+            </div>
+            <div class="bento-cell bento-video-sm-a" style="padding:0;overflow:hidden;background:#f0f4f2;">
+              <img src="IMAGES/Accenture%20Project%20Overview%20Image.png" alt="Accenture Project Overview" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div class="bento-cell bento-video-sm-b" style="padding:0;overflow:hidden;align-items:flex-start;background:#f0f4f2;">
+              <div class="bento-scroll-track">
+                <img src="IMAGES/Accenture%203%20brand%20image%20mix.webp" alt="Accenture brand image" style="width:100%;display:block;">
+                <img src="IMAGES/Accenture%203%20brand%20image%20mix.webp" alt="" aria-hidden="true" style="width:100%;display:block;">
+              </div>
+            </div>
+            <div class="bento-cell bento-work-sample" style="padding:0;overflow:hidden;background:#f0f4f2;">
+              <div class="bento-hscroll-track">
+                <img src="IMAGES/Accenture%20Playbook%20Slide%201.png" alt="Accenture Playbook Slide 1">
+                <img src="IMAGES/Accenture%20Playbook%20Slide%202.png" alt="Accenture Playbook Slide 2">
+                <img src="IMAGES/Accenture%20Playbook%20Slide%203.png" alt="Accenture Playbook Slide 3">
+                <img src="IMAGES/Accenture%20Playbook%20Slide%204.png" alt="Accenture Playbook Slide 4">
+                <img src="IMAGES/Accenture%20Playbook%20Slide%201.png" alt="" aria-hidden="true">
+                <img src="IMAGES/Accenture%20Playbook%20Slide%202.png" alt="" aria-hidden="true">
+                <img src="IMAGES/Accenture%20Playbook%20Slide%203.png" alt="" aria-hidden="true">
+                <img src="IMAGES/Accenture%20Playbook%20Slide%204.png" alt="" aria-hidden="true">
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /cs-grid -->
+  </div><!-- /container -->
+</section>
+
+<!-- ─── Skills ───────────────────────────────────────── -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label">Capabilities</div>
+    <h2 class="section-title">Skills &amp; expertise</h2>
+    <p class="skills-intro">Built across 10+ years of hands-on marketing leadership at high-growth SaaS, fintech, and enterprise technology companies.</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">📊</div>
+        <div class="skill-name">Gathering Insights</div>
+        <div class="skill-desc">Market research, buyer interviews, competitive intelligence, and ICP definition to build GTM strategies on solid ground.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🚀</div>
+        <div class="skill-name">Go-to-Market Building</div>
+        <div class="skill-desc">End-to-end GTM design: positioning, messaging, segment strategy, launch planning, and cross-functional alignment.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">⚡</div>
+        <div class="skill-name">Demand Generation &amp; Growth</div>
+        <div class="skill-desc">Full-funnel demand engines — paid, organic, ABM, events, and community — with pipeline and revenue accountability.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🎯</div>
+        <div class="skill-name">Product Marketing</div>
+        <div class="skill-desc">Translating complex products into compelling narratives: value props, competitive positioning, sales enablement, and launches.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">✍️</div>
+        <div class="skill-name">Brand &amp; Content</div>
+        <div class="skill-desc">Brand strategy, thought leadership, content programmes, and PR to build credibility and owned-channel pipeline.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">⚙️</div>
+        <div class="skill-name">Marketing Operations</div>
+        <div class="skill-desc">Marketing automation, CRM integration, lead scoring, routing, and tech stack implementation (Marketo, Eloqua, Salesforce, HubSpot).</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">📈</div>
+        <div class="skill-name">Reporting &amp; Analytics</div>
+        <div class="skill-desc">Building attribution models, pipeline dashboards, and reporting frameworks to track marketing contribution to revenue.</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">👥</div>
+        <div class="skill-name">Leadership &amp; Team Building</div>
+        <div class="skill-desc">Building and leading high-performing marketing teams, managing global matrix structures, and developing talent at scale.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Contact ──────────────────────────────────────── -->
+<section id="contact" style="padding:80px 0;background:rgba(255,255,255,0.5);border-top:1px solid var(--divider);">
+  <div class="container" style="text-align:center;">
+    <div class="section-label" style="justify-content:center;">Let&rsquo;s connect</div>
+    <h2 class="section-title" style="max-width:500px;margin:0 auto 16px;">Open to the right marketing leadership opportunities</h2>
+    <p style="font-size:16px;color:var(--text-muted);max-width:480px;margin:0 auto 40px;line-height:1.7;">If you are a B2B SaaS, fintech, or technology company looking for a marketing leader who builds brands, growth engines, and turns customers into ambassadors, not just campaigns, I’d love to connect.</p>
+    <div class="hero-ctas" style="justify-content:center;">
+      <a href="mailto:julian.paul.buliga@gmail.com" class="btn-primary">Send me an email</a>
+      <a href="https://www.linkedin.com/in/paulbuliga/" target="_blank" class="btn-outline">Connect on LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Footer ───────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-name">Paul Buliga</div>
+        <div class="footer-tagline">A marketing leader who builds and scales revenue engines across SaaS, fintech, and enterprise technology.</div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/paulbuliga/" target="_blank" class="footer-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a href="mailto:julian.paul.buliga@gmail.com" class="footer-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            julian.paul.buliga@gmail.com
+          </a>
+        </div>
+      </div>
+      <div class="footer-right">
+        <ul class="footer-nav">
+          <li><a href="#case-studies">Case studies</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://www.linkedin.com/in/paulbuliga/" target="_blank">LinkedIn ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 Paul Buliga &mdash; All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- ─── Scripts ──────────────────────────────────────── -->
+<script>
+  // Scroll-reveal animation
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach((el, i) => {
+    el.style.transitionDelay = `${i * 0.05}s`;
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
