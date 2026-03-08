@@ -350,6 +350,23 @@
       0%   { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
+    @keyframes marquee-reverse {
+      0%   { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+    .logos-track-reverse {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      animation: marquee-reverse 28s linear infinite;
+    }
+    .logos-track-reverse:hover { animation-play-state: paused; }
+    .tools-section {
+      margin-bottom: 64px;
+    }
+    .tools-section .logos-viewport {
+      margin-bottom: 8px;
+    }
     .logo-item {
       display: flex;
       align-items: center;
@@ -1009,6 +1026,85 @@
     <h2 class="section-title">Where I&rsquo;ve built &amp; scaled growth engines</h2>
     <p style="font-size:16px;color:var(--text-muted);margin-bottom:56px;">Below a deep dive in my experience and accomplishments at leading startups, scale-ups, and Fortune 500 companies, highlighting how I’ve built, scaled, and optimised go-to-market and growth engines across B2B technology, SaaS, and fintech.</p>
 
+    <!-- ── Tools carousel ───────────────────────────── -->
+    <div class="tools-section">
+      <div class="logos-label">Tools and technology I have hands-on experience with</div>
+
+      <!-- Row 1 → left (15 logos) -->
+      <div class="logos-viewport">
+        <div class="logos-track">
+          <!-- Set A -->
+          <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/HubSpot_Logo.svg/1280px-HubSpot_Logo.svg.png" alt="HubSpot" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">HubSpot</span></div>
+          <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Marketo_logo.svg/960px-Marketo_logo.svg.png" alt="Marketo" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Marketo</span></div>
+          <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/3840px-Salesforce.com_logo.svg.png" alt="Salesforce" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Salesforce</span></div>
+          <div class="logo-item"><img src="https://www.stackmoxie.com/wp-content/uploads/2020/06/Eloqua_logo.png" alt="Oracle Eloqua" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Eloqua</span></div>
+          <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Pipedrive_Logo.svg/3840px-Pipedrive_Logo.svg.png" alt="Pipedrive" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Pipedrive</span></div>
+          <div class="logo-item"><img src="https://iconlogovector.com/uploads/images/2025/07/lg-6882b53766af6-Ahrefs.webp" alt="Ahrefs" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Ahrefs</span></div>
+          <div class="logo-item"><img src="https://www.linqto.com/wp-content/uploads/2023/04/logo_2021-11-05_19-03-08.397-1.png" alt="6sense" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">6sense</span></div>
+          <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Demandbase_logo.svg/960px-Demandbase_logo.svg.png" alt="DemandBase" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">DemandBase</span></div>
+          <div class="logo-item"><img src="https://galvintech.com/wp-content/uploads/2015/07/pardot-logo.png" alt="Pardot" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Pardot</span></div>
+          <div class="logo-item"><img src="https://cdn2.hubspot.net/hubfs/394660/terminus-logo-600.png" alt="Terminus" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Terminus</span></div>
+          <div class="logo-item"><img src="https://customers.bombora.com/hs-fs/hubfs/bombora_logo-Orange-2022.png?width=5684&height=1442&name=bombora_logo-Orange-2022.png" alt="Bombora" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Bombora</span></div>
+          <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/ActiveCampaign_logo.svg/3840px-ActiveCampaign_logo.svg.png" alt="ActiveCampaign" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">ActiveCampaign</span></div>
+          <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Ads_logo.svg/500px-Google_Ads_logo.svg.png" alt="Google Ads" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Google Ads</span></div>
+          <div class="logo-item"><img src="https://logos-world.net/wp-content/uploads/2021/11/Meta-Symbol.png" alt="Meta" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Meta</span></div>
+          <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/LinkedIn_2021.svg" alt="LinkedIn" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">LinkedIn</span></div>
+          <!-- Set B (duplicate for seamless loop) -->
+          <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/HubSpot_Logo.svg/1280px-HubSpot_Logo.svg.png" alt="HubSpot" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">HubSpot</span></div>
+          <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Marketo_logo.svg/960px-Marketo_logo.svg.png" alt="Marketo" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Marketo</span></div>
+          <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/3840px-Salesforce.com_logo.svg.png" alt="Salesforce" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Salesforce</span></div>
+          <div class="logo-item"><img src="https://www.stackmoxie.com/wp-content/uploads/2020/06/Eloqua_logo.png" alt="Oracle Eloqua" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Eloqua</span></div>
+          <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Pipedrive_Logo.svg/3840px-Pipedrive_Logo.svg.png" alt="Pipedrive" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Pipedrive</span></div>
+          <div class="logo-item"><img src="https://iconlogovector.com/uploads/images/2025/07/lg-6882b53766af6-Ahrefs.webp" alt="Ahrefs" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Ahrefs</span></div>
+          <div class="logo-item"><img src="https://www.linqto.com/wp-content/uploads/2023/04/logo_2021-11-05_19-03-08.397-1.png" alt="6sense" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">6sense</span></div>
+          <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Demandbase_logo.svg/960px-Demandbase_logo.svg.png" alt="DemandBase" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">DemandBase</span></div>
+          <div class="logo-item"><img src="https://galvintech.com/wp-content/uploads/2015/07/pardot-logo.png" alt="Pardot" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Pardot</span></div>
+          <div class="logo-item"><img src="https://cdn2.hubspot.net/hubfs/394660/terminus-logo-600.png" alt="Terminus" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Terminus</span></div>
+          <div class="logo-item"><img src="https://customers.bombora.com/hs-fs/hubfs/bombora_logo-Orange-2022.png?width=5684&height=1442&name=bombora_logo-Orange-2022.png" alt="Bombora" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Bombora</span></div>
+          <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/ActiveCampaign_logo.svg/3840px-ActiveCampaign_logo.svg.png" alt="ActiveCampaign" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">ActiveCampaign</span></div>
+          <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Ads_logo.svg/500px-Google_Ads_logo.svg.png" alt="Google Ads" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Google Ads</span></div>
+          <div class="logo-item"><img src="https://logos-world.net/wp-content/uploads/2021/11/Meta-Symbol.png" alt="Meta" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Meta</span></div>
+          <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/LinkedIn_2021.svg" alt="LinkedIn" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">LinkedIn</span></div>
+        </div>
+      </div>
+
+      <!-- Row 2 ← right / reverse (14 logos) -->
+      <div class="logos-viewport">
+        <div class="logos-track-reverse">
+          <!-- Set A -->
+          <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Webflow_logo_2023.svg" alt="Webflow" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Webflow</span></div>
+          <div class="logo-item"><img src="https://cdn.worldvectorlogo.com/logos/storyblok-logo.svg" alt="Storyblok" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Storyblok</span></div>
+          <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/39/ZoomInfo_logo_%282024%29.svg/1280px-ZoomInfo_logo_%282024%29.svg.png" alt="ZoomInfo" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">ZoomInfo</span></div>
+          <div class="logo-item"><img src="https://dimmo-cms.s3.us-east-1.amazonaws.com/Cognism_Company_Logo_99b4325424.png" alt="Cognism" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Cognism</span></div>
+          <div class="logo-item"><img src="https://skrapp.io/blog/content/images/size/w960/2025/03/image--2-.png" alt="Apollo" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Apollo</span></div>
+          <div class="logo-item"><img src="https://strategicmarketsolutions.com/wp-content/uploads/2024/01/Looker-Studio-Logo.png" alt="Looker Studio" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Looker Studio</span></div>
+          <div class="logo-item"><img src="https://cdn.freebiesupply.com/logos/large/2x/intercom-1-logo-png-transparent.png" alt="Intercom" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Intercom</span></div>
+          <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Microsoft_Dynamics_365_Logo_%282021%E2%80%93present%29.svg/960px-Microsoft_Dynamics_365_Logo_%282021%E2%80%93present%29.svg.png" alt="Microsoft Dynamics" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">MS Dynamics</span></div>
+          <div class="logo-item"><img src="https://www.cpafirmtech.com/wp-content/uploads/2022/01/power-bi_logo.png" alt="Power BI" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Power BI</span></div>
+          <div class="logo-item"><img src="https://www.wildix.com/wp-content/uploads/2022/08/gong-logo.webp" alt="Gong" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Gong</span></div>
+          <div class="logo-item"><img src="https://www.cloudextend.io/wp-content/uploads/2022/09/Salesloft-New-Logo.png" alt="Salesloft" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Salesloft</span></div>
+          <div class="logo-item"><img src="https://cdn.prod.website-files.com/674d972fed0ad910348292c6/6855688814d62ac6f038cab0_linkedin-sales-navigator.png" alt="Sales Navigator" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Sales Navigator</span></div>
+          <div class="logo-item"><img src="https://www.makethunder.com/wp-content/uploads/2020/10/DV360-logo.png" alt="DV360" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">DV360</span></div>
+          <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Bing_Ads_2016_logo.svg/960px-Bing_Ads_2016_logo.svg.png" alt="Bing Ads" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Bing Ads</span></div>
+          <!-- Set B (duplicate for seamless loop) -->
+          <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Webflow_logo_2023.svg" alt="Webflow" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Webflow</span></div>
+          <div class="logo-item"><img src="https://cdn.worldvectorlogo.com/logos/storyblok-logo.svg" alt="Storyblok" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Storyblok</span></div>
+          <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/39/ZoomInfo_logo_%282024%29.svg/1280px-ZoomInfo_logo_%282024%29.svg.png" alt="ZoomInfo" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">ZoomInfo</span></div>
+          <div class="logo-item"><img src="https://dimmo-cms.s3.us-east-1.amazonaws.com/Cognism_Company_Logo_99b4325424.png" alt="Cognism" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Cognism</span></div>
+          <div class="logo-item"><img src="https://skrapp.io/blog/content/images/size/w960/2025/03/image--2-.png" alt="Apollo" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Apollo</span></div>
+          <div class="logo-item"><img src="https://strategicmarketsolutions.com/wp-content/uploads/2024/01/Looker-Studio-Logo.png" alt="Looker Studio" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Looker Studio</span></div>
+          <div class="logo-item"><img src="https://cdn.freebiesupply.com/logos/large/2x/intercom-1-logo-png-transparent.png" alt="Intercom" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Intercom</span></div>
+          <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Microsoft_Dynamics_365_Logo_%282021%E2%80%93present%29.svg/960px-Microsoft_Dynamics_365_Logo_%282021%E2%80%93present%29.svg.png" alt="Microsoft Dynamics" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">MS Dynamics</span></div>
+          <div class="logo-item"><img src="https://www.cpafirmtech.com/wp-content/uploads/2022/01/power-bi_logo.png" alt="Power BI" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Power BI</span></div>
+          <div class="logo-item"><img src="https://www.wildix.com/wp-content/uploads/2022/08/gong-logo.webp" alt="Gong" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Gong</span></div>
+          <div class="logo-item"><img src="https://www.cloudextend.io/wp-content/uploads/2022/09/Salesloft-New-Logo.png" alt="Salesloft" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Salesloft</span></div>
+          <div class="logo-item"><img src="https://cdn.prod.website-files.com/674d972fed0ad910348292c6/6855688814d62ac6f038cab0_linkedin-sales-navigator.png" alt="Sales Navigator" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Sales Navigator</span></div>
+          <div class="logo-item"><img src="https://www.makethunder.com/wp-content/uploads/2020/10/DV360-logo.png" alt="DV360" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">DV360</span></div>
+          <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Bing_Ads_2016_logo.svg/960px-Bing_Ads_2016_logo.svg.png" alt="Bing Ads" onerror="this.closest('.logo-item').classList.add('has-error')"><span class="logo-fallback">Bing Ads</span></div>
+        </div>
+      </div>
+    </div>
+
     <div class="cs-grid">
 
       <!-- ══ 1. OFX ══════════════════════════════════ -->
@@ -1126,7 +1222,12 @@
           <p class="cs-context">Series C–D spend management SaaS, rapid European expansion, mid-market and SMB focus. I led and grew the marketing team with ownership of full-funnel performance, channel mix, content, GTM and P&L. Spendesk had just raised €100M and was scaling rapidly, but the growth engine was heavily outbound-led and increasingly inefficient with rising CAC. I led the strategic repositioning and GTM overhaul to drive sustainable, inbound-led growth.</p>
           <div class="cs-outcome">
             <svg class="cs-outcome-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-            <div class="cs-outcome-text">Repositioned Spendesk from &ldquo;expense automation&rdquo; to &ldquo;House of Spendesk&rdquo; &mdash; a unified spend management suite narrative spanning cards, AP, invoice workflows, and ERP integrations &mdash; enabling the platform to move upmarket.</div>
+            <div class="cs-outcome-text">
+              <ul style="padding-left:22px;margin:0;">
+                <li style="margin-bottom:16px;line-height:1.6;">Led the <span class="metric-highlight">&ldquo;House of Spendesk&rdquo; repositioning</span>, evolving the brand from expense automation to a unified spend management platform and enabling the move upmarket.</li>
+                <li style="line-height:1.6;">Supported <span class="metric-highlight">ARR growth that more than doubled within 18 months</span>, scaling the business deeper into the tens-of-millions revenue range post-Series C.</li>
+              </ul>
+            </div>
           </div>
           <div class="accordions">
             <details class="accordion">
@@ -1226,9 +1327,13 @@
           <div class="cs-outcome">
             <svg class="cs-outcome-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
             <div class="cs-outcome-text">
-              <ul style="padding-left:22px;margin:0;">
+              <ul class="cs-context-desktop" style="padding-left:22px;margin:0;">
                 <li style="margin-bottom:16px;line-height:1.6;"><span class="metric-highlight">B2B grew from 3% to 25% of Wise&rsquo;s total FX volume</span> (2022&ndash;2025). Wise Platform generated <span class="metric-highlight">$7M ARR in year one</span> through verticalised inbound campaigns. Established a repeatable B2B GTM engine now used to win partnerships with leading banks, payroll providers, and fintech platforms.</li>
                 <li style="line-height:1.6;">Proud to have been actively involved in the global brand transition from TransferWise to Wise, overseeing the rollout of the new brand identity, visual system, and messaging shift across B2B marketing channels.</li>
+              </ul>
+              <ul class="cs-context-mobile" style="padding-left:22px;margin:0;">
+                <li style="margin-bottom:16px;line-height:1.6;">Scaled Wise B2B from <span class="metric-highlight">3% to 25% of total FX volume</span>, generating <span class="metric-highlight">$7M ARR in year one</span> and building the repeatable GTM engine behind it.</li>
+                <li style="line-height:1.6;">Supported the global TransferWise &rarr; Wise rebrand, rolling out the new identity and messaging across B2B marketing channels.</li>
               </ul>
             </div>
           </div>
