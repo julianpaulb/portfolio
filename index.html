@@ -760,6 +760,26 @@
       .container { padding: 0 16px; }
       .cs-header, .cs-body { padding: 20px; }
       .hero-ctas { flex-direction: column; align-items: flex-start; }
+      .hero-stats { grid-template-columns: 1fr; }
+
+      /* Phone bento: video full width, stat full width, small cells 2-up */
+      .bento-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 180px auto 110px 110px;
+      }
+      .bento-video-main { grid-column: 1 / 3; grid-row: 1; }
+      .bento-stat {
+        grid-column: 1 / 3;
+        grid-row: 2;
+        min-height: 100px;
+        height: auto;
+        padding: 24px;
+      }
+      .bento-stat-num { font-size: 36px; }
+      .bento-stat-label { font-size: 14px; }
+      .bento-video-sm-a { grid-column: 1; grid-row: 3; }
+      .bento-video-sm-b { grid-column: 2; grid-row: 3; }
+      .bento-work-sample { grid-column: 1 / 3; grid-row: 4; }
     }
   </style>
 </head>
