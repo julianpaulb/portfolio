@@ -112,6 +112,72 @@
     }
     .btn-nav:hover { background: #2e8a5a !important; transform: translateY(-1px); }
 
+    /* ─── Hamburger menu ─────────────────────────────── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .nav-hamburger:hover { background: rgba(26,46,34,0.06); }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: transform 0.25s, opacity 0.2s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .nav-mobile-menu {
+      display: none;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background: rgba(240,247,244,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--divider);
+      padding: 12px 24px 20px;
+      flex-direction: column;
+      gap: 4px;
+      z-index: 999;
+    }
+    .nav-mobile-menu.open { display: flex; }
+    .nav-mobile-menu a {
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 10px 12px;
+      border-radius: 8px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-mobile-menu a:hover { color: var(--text); background: rgba(26,46,34,0.05); }
+    .nav-mobile-menu .btn-nav-mobile {
+      margin-top: 8px;
+      display: block;
+      text-align: center;
+      background: var(--accent);
+      color: #fff !important;
+      font-weight: 600;
+      border-radius: 10px;
+      padding: 12px !important;
+    }
+    .nav-mobile-menu .btn-nav-mobile:hover { background: #2e8a5a; }
+
     /* ─── Hero ────────────────────────────────────────── */
     #hero {
       padding: 120px 0 104px;
@@ -741,9 +807,8 @@
     /* ─── Responsive ──────────────────────────────────── */
     @media (max-width: 768px) {
       section { padding: 64px 0; }
-      .nav-links { gap: 2px; }
-      .nav-links a { font-size: 12px; padding: 6px 8px; }
-      .btn-nav { font-size: 12px; padding: 6px 10px; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
       h1.hero-title { font-size: 36px; letter-spacing: -0.8px; }
       .hero-stats { gap: 28px; }
       .cs-header { flex-direction: column; gap: 12px; }
@@ -807,6 +872,15 @@
       <li><a href="#contact">Contact</a></li>
       <li><a href="https://www.linkedin.com/in/paulbuliga/" target="_blank" class="btn-nav">LinkedIn ↗</a></li>
     </ul>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile-menu" id="navMobileMenu">
+    <a href="#case-studies">Experience overview</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+    <a href="https://www.linkedin.com/in/paulbuliga/" target="_blank" class="btn-nav-mobile">Connect on LinkedIn ↗</a>
   </div>
 </nav>
 
@@ -1521,10 +1595,11 @@
           <div class="cs-outcome">
             <svg class="cs-outcome-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
             <div class="cs-outcome-text">
-              <strong style="color:#3d9e6e;">Fiat Chrysler Automobiles:</strong> Led a multi-brand marketing transformation across three core European markets, transitioning website management, email marketing, and digital advertising for multiple car brands from regional agencies to Accenture’s global delivery model.<br><br>
-<strong style="color:#3d9e6e;">P&amp;G:</strong> Scalable delivery model with improved conversion for Gillette & Pantene household products.<br><br>
-
-<strong style="color:#3d9e6e;">Deutsche Bank:</strong> Predictable, trackable execution engine across acquisition channels.
+              <ul style="padding-left:22px;margin:0;">
+                <li style="margin-bottom:16px;line-height:1.6;"><strong style="color:#3d9e6e;">Fiat Chrysler Automobiles:</strong> Led a multi-brand marketing transformation across three core European markets, transitioning website management, email marketing, and digital advertising for multiple car brands from regional agencies to Accenture’s global delivery model.</li>
+                <li style="margin-bottom:16px;line-height:1.6;"><strong style="color:#3d9e6e;">P&amp;G:</strong> Scalable delivery model with improved conversion for Gillette &amp; Pantene household products.</li>
+                <li style="line-height:1.6;"><strong style="color:#3d9e6e;">Deutsche Bank:</strong> Predictable, trackable execution engine across acquisition channels.</li>
+              </ul>
             </div>
           </div>
           <div class="accordions">
@@ -1724,6 +1799,20 @@
   document.querySelectorAll('.fade-up').forEach((el, i) => {
     el.style.transitionDelay = `${i * 0.05}s`;
     observer.observe(el);
+  });
+
+  // Hamburger menu toggle
+  const hamburger = document.getElementById('navHamburger');
+  const mobileMenu = document.getElementById('navMobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
   });
 </script>
 
