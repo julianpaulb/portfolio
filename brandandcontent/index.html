@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand &amp; Content — Paul Buliga</title>
+  <meta name="description" content="How Paul Buliga approaches brand positioning, content strategy, and thought leadership across B2B SaaS, fintech, and enterprise technology.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    /* ─── Design Tokens ────────────────────────────────── */
+    :root {
+      --accent:        #3d9e6e;
+      --accent-mid:    #5bbf8a;
+      --accent-light:  #e4f4ec;
+      --accent-glow:   rgba(93,191,138,0.18);
+      --text:          #1a2e22;
+      --text-muted:    #4a6b57;
+      --text-faint:    #7a9e87;
+      --bg:            #f2f8f5;
+      --card:          #ffffff;
+      --card-border:   rgba(26,46,34,0.08);
+      --card-shadow:   0 2px 24px rgba(26,46,34,0.07);
+      --card-shadow-h: 0 8px 40px rgba(26,46,34,0.13);
+      --divider:       rgba(26,46,34,0.09);
+      --radius:        16px;
+      --radius-sm:     10px;
+      --max-w:         1160px;
+      --font-sans:     'Syne', system-ui, sans-serif;
+      --font-body:     'Inter', system-ui, sans-serif;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+      background-image:
+        radial-gradient(ellipse 90% 55% at 10% 20%, rgba(134,210,163,0.30) 0%, transparent 68%),
+        radial-gradient(ellipse 60% 50% at 88% 80%, rgba(76,175,130,0.20) 0%, transparent 62%),
+        radial-gradient(ellipse 40% 35% at 55% 50%, rgba(93,191,138,0.10) 0%, transparent 55%),
+        linear-gradient(160deg, #f0f7f4 0%, #e8f5ee 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+
+    /* ─── Layout Helpers ──────────────────────────────── */
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+    section { padding: 96px 0; }
+
+    /* ─── Navigation ──────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px) saturate(1.4);
+      -webkit-backdrop-filter: blur(14px) saturate(1.4);
+      background: rgba(242, 248, 245, 0.82);
+      border-bottom: 1px solid var(--divider);
+    }
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .nav-logo {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.3px;
+      white-space: nowrap;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); background: rgba(26,46,34,0.05); }
+    .btn-nav {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff !important;
+      background: var(--accent);
+      padding: 8px 18px !important;
+      border-radius: 10px !important;
+      transition: background 0.2s, transform 0.1s !important;
+    }
+    .btn-nav:hover { background: #2e8a5a !important; transform: translateY(-1px); }
+
+    /* ─── Hamburger menu ─────────────────────────────── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .nav-hamburger:hover { background: rgba(26,46,34,0.06); }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: transform 0.25s, opacity 0.2s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile-menu {
+      display: none;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background: rgba(240,247,244,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--divider);
+      padding: 12px 24px 20px;
+      flex-direction: column;
+      gap: 4px;
+      z-index: 999;
+    }
+    .nav-mobile-menu.open { display: flex; }
+    .nav-mobile-menu a {
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 10px 12px;
+      border-radius: 8px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-mobile-menu a:hover { color: var(--text); background: rgba(26,46,34,0.05); }
+    .nav-mobile-menu .btn-nav-mobile {
+      margin-top: 8px;
+      display: block;
+      text-align: center;
+      background: var(--accent);
+      color: #fff !important;
+      font-weight: 600;
+      border-radius: 10px;
+      padding: 12px !important;
+    }
+    .nav-mobile-menu .btn-nav-mobile:hover { background: #2e8a5a; }
+
+    /* ─── Page Hero ───────────────────────────────────── */
+    #page-hero {
+      padding: 100px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-light);
+      border: 1px solid rgba(61,158,110,0.2);
+      padding: 5px 12px;
+      border-radius: 99px;
+      margin-bottom: 28px;
+    }
+    .page-hero-eyebrow::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+    }
+    .page-hero-title {
+      font-family: var(--font-sans);
+      font-size: clamp(34px, 5vw, 58px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+      color: var(--text);
+      max-width: 780px;
+      margin-bottom: 24px;
+    }
+    .page-hero-title em {
+      font-style: normal;
+      color: var(--accent);
+    }
+    .page-hero-desc {
+      font-size: 17px;
+      color: var(--text-muted);
+      max-width: 680px;
+      line-height: 1.75;
+      margin-bottom: 40px;
+    }
+    .btn-primary {
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      background: var(--accent);
+      padding: 13px 26px;
+      border-radius: 12px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 14px rgba(61,158,110,0.3);
+    }
+    .btn-primary:hover { background: #2e8a5a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(61,158,110,0.35); }
+    .btn-outline {
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      background: transparent;
+      padding: 12px 24px;
+      border-radius: 12px;
+      border: 1.5px solid var(--card-border);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    }
+    .btn-outline:hover { border-color: var(--accent); background: var(--accent-light); transform: translateY(-2px); }
+    .hero-ctas { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+
+    /* ─── Skills Sections ─────────────────────────────── */
+    #skills-content { padding: 0 0 120px; }
+
+    .skill-block {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--divider);
+    }
+    .skill-block:last-child { border-bottom: none; }
+
+    .skill-block-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+    .skill-block-inner.reverse { direction: rtl; }
+    .skill-block-inner.reverse > * { direction: ltr; }
+
+    /* Text side */
+    .skill-num {
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-light);
+      border: 1px solid rgba(61,158,110,0.2);
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 99px;
+      margin-bottom: 20px;
+    }
+    .skill-heading {
+      font-family: var(--font-sans);
+      font-size: clamp(20px, 2.4vw, 28px);
+      font-weight: 700;
+      letter-spacing: -0.4px;
+      color: var(--text);
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+    .skill-body {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+    .skill-body p + p { margin-top: 16px; }
+
+    /* Image side */
+    .skill-visual { position: relative; }
+    .skill-img-wrap {
+      border-radius: 20px;
+      overflow: hidden;
+      background: rgba(244,250,247,0.85);
+      border: 1px solid var(--card-border);
+      box-shadow: var(--card-shadow);
+      position: relative;
+      padding: 20px;
+    }
+    .skill-img-wrap img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      border-radius: 10px;
+      transition: transform 0.5s ease;
+    }
+    .skill-img-wrap:hover img { transform: scale(1.02); }
+
+    .skill-img-badge {
+      position: absolute;
+      bottom: -16px;
+      right: -16px;
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--font-sans);
+      font-size: 20px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(61,158,110,0.35);
+      letter-spacing: -1px;
+      z-index: 2;
+    }
+
+    /* ─── Section label bar ───────────────────────────── */
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-bottom: 48px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--divider); }
+
+    /* ─── Contact ─────────────────────────────────────── */
+    #contact {
+      padding: 80px 0;
+      background: rgba(255,255,255,0.5);
+      border-top: 1px solid var(--divider);
+    }
+
+    /* ─── Footer ──────────────────────────────────────── */
+    footer {
+      background: rgba(255,255,255,0.6);
+      border-top: 1px solid var(--divider);
+      padding: 56px 0 32px;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-name {
+      font-family: var(--font-sans);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    .footer-tagline {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 340px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; }
+    .footer-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-link:hover { color: var(--accent); }
+    .footer-nav { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-nav a {
+      font-size: 14px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-nav a:hover { color: var(--accent); }
+    .footer-bottom {
+      font-size: 13px;
+      color: var(--text-faint);
+      padding-top: 24px;
+      border-top: 1px solid var(--divider);
+    }
+
+    /* ─── Fade-up Animation ───────────────────────────── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── Responsive ──────────────────────────────────── */
+    @media (max-width: 860px) {
+      .skill-block-inner {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .skill-block-inner.reverse { direction: ltr; }
+      .skill-visual { order: -1; }
+      .skill-img-badge { bottom: -12px; right: -12px; width: 44px; height: 44px; font-size: 16px; }
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .page-hero-title { letter-spacing: -0.8px; }
+      .footer-inner { flex-direction: column; gap: 32px; }
+      .skill-block { padding: 48px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── Navigation ──────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">Portfolio of Paul Buliga</a>
+    <ul class="nav-links">
+      <li><a href="../index.html#case-studies">Experience overview</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+      <li><a href="https://www.linkedin.com/in/paulbuliga/" target="_blank" class="btn-nav">LinkedIn ↗</a></li>
+    </ul>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile-menu" id="navMobileMenu">
+    <a href="../index.html#case-studies">Experience overview</a>
+    <a href="../index.html#skills">Skills</a>
+    <a href="../index.html#contact">Contact</a>
+    <a href="https://www.linkedin.com/in/paulbuliga/" target="_blank" class="btn-nav-mobile">Connect on LinkedIn ↗</a>
+  </div>
+</nav>
+
+<!-- ─── Page Hero ───────────────────────────────────── -->
+<section id="page-hero">
+  <div class="container">
+    <div class="page-hero-eyebrow">Brand &amp; Content</div>
+    <h1 class="page-hero-title">Brand &amp; Content that<br>builds <em>lasting authority</em></h1>
+    <p class="page-hero-desc">From brand positioning and narrative alignment through to content strategy, thought leadership, and funnel-stage execution — how I build the credibility and clarity that drives long-term demand.</p>
+    <div class="hero-ctas">
+      <a href="../index.html#case-studies" class="btn-primary">See my experience ↗</a>
+      <a href="https://www.linkedin.com/in/paulbuliga/" target="_blank" class="btn-outline">Connect on LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Skills Detail Content ──────────────────────── -->
+<section id="skills-content">
+  <div class="container">
+    <div class="section-label">Three core capabilities</div>
+
+    <!-- 01 Brand Positioning & Narrative Alignment -->
+    <div class="skill-block fade-up">
+      <div class="skill-block-inner">
+        <div class="skill-text">
+          <span class="skill-num">01</span>
+          <h2 class="skill-heading">Brand Positioning &amp; Narrative Alignment</h2>
+          <div class="skill-body">
+            <p>Across rebrands, scale-ups, and new product launches, I've led brand repositioning and messaging work that aligns product, sales, and marketing around a clear narrative, ensuring buyers immediately understand who the product is for, why it's different, and when to engage.</p>
+            <p>This creates consistency across campaigns, channels, and regions, while giving sales teams a stronger story to tell.</p>
+          </div>
+        </div>
+        <div class="skill-visual">
+          <div class="skill-img-wrap">
+            <img src="../IMAGES/SKILLS%20IMAGES/Content%20Brand%20Building.png" alt="Brand Positioning & Narrative Alignment">
+          </div>
+          <div class="skill-img-badge">01</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 Map Content to User Journey Stage -->
+    <div class="skill-block fade-up">
+      <div class="skill-block-inner reverse">
+        <div class="skill-text">
+          <span class="skill-num">02</span>
+          <h2 class="skill-heading">Map Content to User Journey Stage</h2>
+          <div class="skill-body">
+            <p>I design structured content strategies mapped explicitly to funnel stages and buying moments: awareness content to drive qualified demand, consideration assets to build confidence and problem–solution fit, and conversion-focused sales enablement content that shortens sales cycles and improves win rates. This includes ICP-led messaging, verticalised narratives, use-case frameworks, ABM content when applicable, and enablement assets that sales teams actually use.</p>
+            <p>Across my roles, I've owned both the full funnel and individual funnel stages, sometimes defining and executing content strategy end to end, other times partnering with internal and external teams. This has given me hands-on exposure to a wide range of content formats, including thought leadership, blogs, research reports and ebooks, fact sheets, infographics, webinars, podcasts, and sales enablement assets, and a strong, practical understanding of how each performs across buying stages and where it creates the most value.</p>
+          </div>
+        </div>
+        <div class="skill-visual">
+          <div class="skill-img-wrap">
+            <img src="../IMAGES/SKILLS%20IMAGES/Content%20Creation.png" alt="Map Content to User Journey Stage">
+          </div>
+          <div class="skill-img-badge">02</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 Become a Thought Leader in Your Industry -->
+    <div class="skill-block fade-up">
+      <div class="skill-block-inner">
+        <div class="skill-text">
+          <span class="skill-num">03</span>
+          <h2 class="skill-heading">Become a Thought Leader in Your Industry</h2>
+          <div class="skill-body">
+            <p>Across my roles at companies such as Wise, Spendesk, Oracle, OFX, and others, a consistent focus has been building credible thought leadership within the industries we operate in. This has meant developing educational, persona-driven content that goes beyond promotion to genuinely train and inform the audiences we want to reach.</p>
+            <p>By addressing the real challenges, responsibilities, and decision criteria of both decision makers and telling influencers, I help position the company as a trusted source of insight and guidance, not just a vendor. Over time, this approach turns content into a lever for trust, consideration, and conversion, supporting demand generation and long-term brand authority.</p>
+          </div>
+        </div>
+        <div class="skill-visual">
+          <div class="skill-img-wrap">
+            <img src="../IMAGES/SKILLS%20IMAGES/Content%20Thought%20leader%20content.png" alt="Become a Thought Leader in Your Industry">
+          </div>
+          <div class="skill-img-badge">03</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── Contact ──────────────────────────────────────── -->
+<section id="contact">
+  <div class="container" style="text-align:center;">
+    <div class="section-label" style="justify-content:center;">Let&rsquo;s connect</div>
+    <h2 style="font-family:var(--font-sans);font-size:clamp(26px,3vw,38px);font-weight:700;letter-spacing:-0.5px;color:var(--text);margin-bottom:16px;max-width:500px;margin-left:auto;margin-right:auto;">Open to the right marketing leadership opportunities</h2>
+    <p style="font-size:16px;color:var(--text-muted);max-width:480px;margin:0 auto 40px;line-height:1.7;">If you are a B2B SaaS, fintech, or technology company looking for a marketing leader who builds brands, growth engines, and turns customers into ambassadors &mdash; I&rsquo;d love to connect.</p>
+    <div class="hero-ctas" style="justify-content:center;">
+      <a href="mailto:julian.paul.buliga@gmail.com" class="btn-primary">Send me an email</a>
+      <a href="https://www.linkedin.com/in/paulbuliga/" target="_blank" class="btn-outline">Connect on LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Footer ───────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-name">Paul Buliga</div>
+        <div class="footer-tagline">A marketing leader who builds and scales revenue engines across SaaS, fintech, and enterprise technology.</div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/paulbuliga/" target="_blank" class="footer-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a href="mailto:julian.paul.buliga@gmail.com" class="footer-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            julian.paul.buliga@gmail.com
+          </a>
+        </div>
+      </div>
+      <div class="footer-right">
+        <ul class="footer-nav">
+          <li><a href="../index.html#case-studies">Case studies</a></li>
+          <li><a href="../index.html#skills">Skills</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="https://www.linkedin.com/in/paulbuliga/" target="_blank">LinkedIn ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 Paul Buliga &mdash; All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- ─── Scripts ──────────────────────────────────────── -->
+<script>
+  // Scroll-reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach((el, i) => {
+    el.style.transitionDelay = `${i * 0.07}s`;
+    observer.observe(el);
+  });
+
+  // Hamburger menu toggle
+  const hamburger = document.getElementById('navHamburger');
+  const mobileMenu = document.getElementById('navMobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>
